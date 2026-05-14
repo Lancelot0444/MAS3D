@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora de Cotización 3D</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="header-inner">
+        <div class="logo">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="24,4 44,36 4,36" fill="none" stroke="#00d4ff" stroke-width="2.5"/>
+            <polygon points="24,14 38,38 10,38" fill="rgba(0,212,255,0.15)" stroke="#7c3aed" stroke-width="1.5"/>
+            <line x1="24" y1="4" x2="24" y2="38" stroke="#00d4ff" stroke-width="1" stroke-dasharray="3,3"/>
+            <line x1="4" y1="36" x2="44" y2="36" stroke="#7c3aed" stroke-width="1" stroke-dasharray="3,3"/>
+          </svg>
+          <span>MAS<strong>3D</strong></span>
+        </div>
+        <h1>Calculadora de Cotización</h1>
+        <p class="subtitle">Figuras e impresiones 3D — Precios reales de filamento</p>
+      </div>
+    </header>
+
+    <main>
+      <div class="grid">
+
+        <!-- COLUMNA IZQUIERDA: PARÁMETROS -->
+        <section class="card">
+          <h2 class="card-title">
+            <span class="icon">🧵</span> Material
+          </h2>
+
+          <div class="field">
+            <label>Tipo de filamento</label>
+            <div class="select-wrap">
+              <select id="filament">
+                <option value="pla_normal">PLA Normal — $18/kg</option>
+                <option value="pla_silk">PLA Silk — $20/kg</option>
+                <option value="pla_especial">PLA Especial (arcoíris, madera, mármol, fluor) — $21/kg</option>
+                <option value="tpu">TPU / Flexible — $28/kg</option>
+                <option value="tecnico">Técnico (Nylon, Fibra de carbono, ASA) — $25/kg</option>
+                <option value="abs">ABS — $20/kg</option>
+                <option value="petg">PETG — $20/kg</option>
+              </select>
+            </div>
+            <span class="hint" id="filament-hint">Marca ARTILLERY · Promoción 3DTRONIX</span>
+          </div>
+
+          <div class="field">
+            <label>Color / variante <span class="optional">opcional</span></label>
+            <input type="text" id="color" placeholder="Ej: Oro, Arcoíris, Negro…" />
+          </div>
+
+          <div class="divider"></div>
+          <h2 class="card-title"><span class="icon">📐</span> Peso e impresión</h2>
+
+          <div class="field">
+            <label>Peso estimado de la pieza (g)</label>
+            <div class="input-unit">
+              <input type="number" id="weight" min="1" max="9999" value="50" />
+              <span class="unit">g</span>
+            </div>
+            <span class="hint">Usa tu laminador (Cura, PrusaSlicer) para obtener el peso exacto.</span>
+          </div>
+
+          <div class="field">
+            <label>Calidad de impresión</label>
+            <div class="radio-group" id="quality">
+              <label class="radio-card">
+                <input type="radio" name="quality" value="draft" />
+                <span>
+                  <strong>Borrador</strong>
+                  <small>0.3 mm · Rápido</small>
+                </span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="quality" value="standard" checked />
+                <span>
+                  <strong>Estándar</strong>
+                  <small>0.2 mm · Normal</small>
+                </span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="quality" value="fine" />
+                <span>
+                  <strong>Fino</strong>
+                  <small>0.1 mm · Detallado</small>
+                </span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="quality" value="ultra" />
+                <span>
+                  <strong>Ultra</strong>
+                  <small>0.05 mm · Premium</small>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="field two-col">
+            <div>
+              <label>Relleno (Infill %)</label>
+              <div class="input-unit">
+                <input type="number" id="infill" min="5" max="100" value="20" />
+                <span class="unit">%</span>
+              </div>
+            </div>
+            <div>
+              <label>Cantidad de piezas</label>
+              <input type="number" id="qty" min="1" max="999" value="1" />
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <h2 class="card-title"><span class="icon">⚙️</span> Extras</h2>
+
+          <div class="field">
+            <label>Soportes</label>
+            <div class="toggle-group" id="supports">
+              <button class="toggle-btn active" data-value="none">Sin soportes</button>
+              <button class="toggle-btn" data-value="normal">Soportes normales</button>
+              <button class="toggle-btn" data-value="complex">Soportes complejos</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Post-procesado</label>
+            <div class="toggle-group" id="postprocess">
+              <button class="toggle-btn active" data-value="none">Ninguno</button>
+              <button class="toggle-btn" data-value="sanding">Lijado</button>
+              <button class="toggle-btn" data-value="painting">Pintado</button>
+              <button class="toggle-btn" data-value="full">Acabado completo</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Complejidad de la figura</label>
+            <div class="toggle-group" id="complexity">
+              <button class="toggle-btn active" data-value="simple">Simple</button>
+              <button class="toggle-btn" data-value="medium">Media</button>
+              <button class="toggle-btn" data-value="complex">Compleja</button>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <h2 class="card-title"><span class="icon">💼</span> Costos operativos</h2>
+
+          <div class="field two-col">
+            <div>
+              <label>Tarifa máquina ($/h)</label>
+              <div class="input-unit">
+                <span class="unit prefix">$</span>
+                <input type="number" id="machine-rate" min="0" step="0.1" value="1.00" />
+              </div>
+              <span class="hint">Electricidad + desgaste</span>
+            </div>
+            <div>
+              <label>Margen de ganancia</label>
+              <div class="input-unit">
+                <input type="number" id="margin" min="0" max="500" value="40" />
+                <span class="unit">%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="field two-col">
+            <div>
+              <label>Falla estimada</label>
+              <div class="input-unit">
+                <input type="number" id="fail-rate" min="0" max="100" value="5" />
+                <span class="unit">%</span>
+              </div>
+            </div>
+            <div>
+              <label>Costo de envío</label>
+              <div class="input-unit">
+                <span class="unit prefix">$</span>
+                <input type="number" id="shipping" min="0" step="0.5" value="0" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- COLUMNA DERECHA: RESULTADOS -->
+        <aside class="results-column">
+
+          <div class="card result-card">
+            <h2 class="card-title"><span class="icon">📊</span> Desglose de costos</h2>
+
+            <div class="breakdown">
+              <div class="breakdown-row">
+                <span>Material</span>
+                <span id="r-material">$0.00</span>
+              </div>
+              <div class="breakdown-row">
+                <span>Tiempo de máquina</span>
+                <span id="r-machine">$0.00</span>
+              </div>
+              <div class="breakdown-row">
+                <span>Mano de obra / Post-procesado</span>
+                <span id="r-labor">$0.00</span>
+              </div>
+              <div class="breakdown-row">
+                <span>Complejidad</span>
+                <span id="r-complexity">$0.00</span>
+              </div>
+              <div class="breakdown-row">
+                <span>Reserva por fallas</span>
+                <span id="r-fail">$0.00</span>
+              </div>
+              <div class="breakdown-row">
+                <span>Envío</span>
+                <span id="r-shipping">$0.00</span>
+              </div>
+              <div class="breakdown-row total-row">
+                <span>Costo total (x<span id="r-qty-label">1</span>)</span>
+                <span id="r-cost">$0.00</span>
+              </div>
+              <div class="breakdown-row margin-row">
+                <span>Ganancia (<span id="r-margin-label">40</span>%)</span>
+                <span id="r-profit">$0.00</span>
+              </div>
+            </div>
+
+            <div class="price-box">
+              <div class="price-label">Precio de venta total</div>
+              <div class="price-main" id="r-total">$0.00</div>
+              <div class="price-unit">
+                Precio por unidad: <strong id="r-unit">$0.00</strong>
+              </div>
+            </div>
+
+            <div class="time-box">
+              <div class="time-item">
+                <span class="time-icon">🕐</span>
+                <div>
+                  <span class="time-label">Tiempo de impresión estimado</span>
+                  <span class="time-value" id="r-time">— h</span>
+                </div>
+              </div>
+              <div class="time-item">
+                <span class="time-icon">🧵</span>
+                <div>
+                  <span class="time-label">Filamento usado</span>
+                  <span class="time-value" id="r-filament-used">— g (~— m)</span>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn-calculate" id="btn-calc">Recalcular</button>
+          </div>
+
+          <!-- COTIZACIÓN PDF -->
+          <div class="card quote-card">
+            <h2 class="card-title"><span class="icon">📄</span> Datos para la cotización</h2>
+            <div class="field">
+              <label>Nombre del cliente</label>
+              <input type="text" id="q-client" placeholder="Ej: María García" />
+            </div>
+            <div class="field">
+              <label>Descripción de la figura</label>
+              <input type="text" id="q-desc" placeholder="Ej: Figura Goku SSJ4 — 20 cm" />
+            </div>
+            <div class="field">
+              <label>Notas adicionales</label>
+              <textarea id="q-notes" rows="2" placeholder="Fecha de entrega, instrucciones especiales…"></textarea>
+            </div>
+            <button class="btn-print" id="btn-print">🖨️ Imprimir / Guardar PDF</button>
+          </div>
+
+        </aside>
+      </div>
+    </main>
+
+    <!-- ÁREA DE IMPRESIÓN -->
+    <div id="print-area" class="print-only">
+      <div class="print-header">
+        <h1>MAS<strong>3D</strong> — Cotización de impresión 3D</h1>
+        <p id="p-date"></p>
+      </div>
+      <table class="print-table">
+        <tbody id="p-body"></tbody>
+      </table>
+      <div class="print-total">
+        <span>PRECIO DE VENTA TOTAL</span>
+        <span id="p-total"></span>
+      </div>
+      <p class="print-footer">Cotización generada con la calculadora MAS3D · Precios de filamento ARTILLERY — Promoción 3DTRONIX</p>
+    </div>
+  </div>
+
+  <script src="calculator.js"></script>
+</body>
+</html>
