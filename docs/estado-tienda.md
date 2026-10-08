@@ -41,3 +41,11 @@ Un producto limitado lleva dos etiquetas, ej. `limited` + `anime`.
 - Menú pie: `grinola-ayuda`.
 - Dominios libres: grinola.store ($9), somosgrinola.com ($16), grinola.org ($16), grinola.net ($19). Ocupados: .com/.ec/.shop.
 - Pendiente: plantilla de producto (PDP), footer, logo subido (archivo), productos.
+
+## Rediseño a medida (2026-10-08, sobre mockups del dueño)
+Código en `theme/` (versionado). Se sube al tema "Grinola - Desarrollo" con themeFilesUpsert tipo URL desde raw.githubusercontent.com (el repo es público: no guardar secretos aquí).
+- Secciones: grinola-hero, grinola-collection-cards, grinola-featured-products, grinola-story, grinola-steps, grinola-faq, grinola-product-details.
+- Snippets: grinola-motion (reveal al hacer scroll, tilt 3D con mouse, respeta reduced-motion), grinola-icon.
+- Home: hero → colecciones → destacados → historia → cómo comprar → FAQ.
+- PDP: galería carrusel (swipe en móvil) + zoom, miniaturas a la izquierda, selector de variantes con botones (tamaño Pequeño/Grande, precio se actualiza), franja de beneficios, detalles desde metafields, cómo comprar, FAQ, recomendados.
+- No se usan reseñas ni estrellas falsas ni logos de pago no activos.
