@@ -49,3 +49,10 @@ Código en `theme/` (versionado). Se sube al tema "Grinola - Desarrollo" con the
 - Home: hero → colecciones → destacados → historia → cómo comprar → FAQ.
 - PDP: galería carrusel (swipe en móvil) + zoom, miniaturas a la izquierda, selector de variantes con botones (tamaño Pequeño/Grande, precio se actualiza), franja de beneficios, detalles desde metafields, cómo comprar, FAQ, recomendados.
 - No se usan reseñas ni estrellas falsas ni logos de pago no activos.
+
+## Catálogo (2026-10-08, noche)
+- 7 productos ACTIVOS y publicados en Tienda online (tienda con contraseña): Fantasy Fruit Purple, Fantasy Fruit Orange, Cupcake Sweet Grinder, Samurai Green Edition, Shadow Ninja Edition, Chibi Blush Edition (Tamaño Pequeño $15 / Grande $25, PROVISIONAL), Skull Flame Case (5 colores, $15 PROVISIONAL).
+- 5 en BORRADOR por falta de fotos: Grinder Classic, Grinder Sphere, Pocket Case, Celtic Pocket Case, Rolling Station.
+- Inventario no rastreado + venta continua (bajo pedido). Metafields: material PLA, línea, características. Datos semilla en `catalog/`.
+- Envíos existentes en Shopify (por defecto): Ecuador "Standard" $11; Internacional $19 (28 países). Revisar/ajustar.
+- Footer en español con menú grinola-ayuda y suscripción.
