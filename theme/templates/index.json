@@ -11,7 +11,8 @@
     "button_link": "shopify://collections/all",
     "link_label": "Ver ediciones limitadas",
     "link_url": "shopify://collections/limited-editions",
-    "badge": "Arte funcional para tu colección"
+    "badge": "Arte funcional para tu colección",
+    "product_image": "shopify://shop_images/grinola-hero-fruta.jpg"
    },
    "blocks": {
     "f1": {
@@ -54,7 +55,8 @@
       "collection": "grinola-core",
       "subtitle": "Piezas de uso diario",
       "tint": "#1E2B1F",
-      "link_label": "Ver colección"
+      "link_label": "Ver colección",
+      "image": "shopify://shop_images/grinola-core-skull.jpg"
      }
     },
     "c2": {
@@ -63,7 +65,8 @@
       "collection": "limited-editions",
       "subtitle": "Tiradas cortas y bajo pedido",
       "tint": "#2A2418",
-      "link_label": "Ver colección"
+      "link_label": "Ver colección",
+      "image": "shopify://shop_images/grinola-limited-coleccion.jpg"
      }
     },
     "c3": {
@@ -72,7 +75,8 @@
       "collection": "sweet-editions",
       "subtitle": "Diseño dulce para tu colección",
       "tint": "#3A1E28",
-      "link_label": "Ver colección"
+      "link_label": "Ver colección",
+      "image": "shopify://shop_images/grinola-sweet-cupcake.jpg"
      }
     }
    },
@@ -93,7 +97,8 @@
   "historia": {
    "type": "grinola-story",
    "settings": {
-    "button_link": "shopify://pages/nosotros"
+    "button_link": "shopify://pages/nosotros",
+    "image": "shopify://shop_images/grinola-limited-coleccion.jpg"
    }
   },
   "pasos": {
