@@ -1,0 +1,294 @@
+{% render 'grinola-motion' %}
+
+<section class="g-scope g-hero" data-g-tilt-area>
+  {%- if section.settings.background -%}
+    <div class="g-hero__bg" aria-hidden="true">
+      {{
+        section.settings.background
+        | image_url: width: 2400
+        | image_tag: loading: 'eager', fetchpriority: 'high', sizes: '100vw', widths: '750, 1100, 1500, 1920, 2400', alt: ''
+      }}
+    </div>
+  {%- endif -%}
+  <div class="g-hero__veil" aria-hidden="true"></div>
+
+  <div class="g-wrap g-hero__grid">
+    <div class="g-hero__copy">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="g-eyebrow" data-g-reveal>{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h1 class="g-title g-gold-text g-hero__title" data-g-reveal style="--g-delay: 80ms">
+          {{ section.settings.heading }}
+        </h1>
+      {%- endif -%}
+      {%- if section.settings.subheading != blank -%}
+        <p class="g-title g-hero__sub" data-g-reveal style="--g-delay: 160ms">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+      {%- if section.settings.text != blank -%}
+        <div class="g-hero__text" data-g-reveal style="--g-delay: 240ms">{{ section.settings.text }}</div>
+      {%- endif -%}
+
+      <div class="g-hero__actions" data-g-reveal style="--g-delay: 320ms">
+        {%- if section.settings.button_label != blank -%}
+          <a class="g-btn g-btn--gold" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">
+            {{- section.settings.button_label -}}
+            {% render 'grinola-icon', name: 'arrow' %}
+          </a>
+        {%- endif -%}
+        {%- if section.settings.link_label != blank -%}
+          <a class="g-link" href="{{ section.settings.link_url | default: routes.collections_url }}">
+            {{- section.settings.link_label -}}
+          </a>
+        {%- endif -%}
+      </div>
+
+      {%- if section.blocks.size > 0 -%}
+        <ul class="g-hero__features" role="list">
+          {%- for block in section.blocks -%}
+            <li
+              class="g-hero__feature"
+              data-g-reveal
+              style="--g-delay: {{ forloop.index | times: 90 | plus: 360 }}ms"
+              {{ block.shopify_attributes }}
+            >
+              <span class="g-hero__feature-icon">{% render 'grinola-icon', name: block.settings.icon %}</span>
+              <span>{{ block.settings.text }}</span>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+
+    <div class="g-hero__media" data-g-reveal="zoom" style="--g-delay: 200ms">
+      <div class="g-hero__float">
+        <div class="g-hero__tilt" data-g-tilt="10">
+          {%- if section.settings.product_image -%}
+            {{
+              section.settings.product_image
+              | image_url: width: 1400
+              | image_tag:
+                loading: 'eager',
+                sizes: '(min-width: 990px) 50vw, 90vw',
+                widths: '500, 800, 1100, 1400',
+                class: 'g-hero__product'
+            }}
+          {%- else -%}
+            {{ 'product-apparel-1' | placeholder_svg_tag: 'g-hero__product g-hero__placeholder' }}
+          {%- endif -%}
+        </div>
+      </div>
+      {%- if section.settings.badge != blank -%}
+        <p class="g-hero__badge">{{ section.settings.badge }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+  .g-hero {
+    min-height: min(92svh, 860px);
+    display: flex;
+    align-items: center;
+    padding-block: 72px 56px;
+  }
+  .g-hero__bg,
+  .g-hero__veil {
+    position: absolute;
+    inset: 0;
+  }
+  .g-hero__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.55;
+  }
+  .g-hero__veil {
+    background: radial-gradient(120% 90% at 75% 40%, rgba(17, 19, 16, 0) 0%, rgba(17, 19, 16, 0.75) 60%, #111310 100%),
+      linear-gradient(90deg, #111310 0%, rgba(17, 19, 16, 0.6) 45%, rgba(17, 19, 16, 0) 75%);
+  }
+  .g-hero__grid {
+    position: relative;
+    display: grid;
+    gap: 32px;
+    align-items: center;
+  }
+  .g-hero__title {
+    font-size: clamp(3rem, 11vw, 6.5rem);
+    letter-spacing: -0.01em;
+  }
+  .g-hero__sub {
+    font-size: clamp(1.5rem, 4.5vw, 2.4rem);
+    margin-top: 6px;
+  }
+  .g-hero__text {
+    max-width: 46ch;
+    margin-top: 18px;
+    color: var(--g-muted);
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+  .g-hero__text p {
+    margin: 0;
+  }
+  .g-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 22px;
+    margin-top: 28px;
+  }
+  .g-hero__features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 28px;
+    margin: 36px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .g-hero__feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 170px;
+    font-size: 0.82rem;
+    line-height: 1.35;
+    color: var(--g-muted);
+  }
+  .g-hero__feature-icon {
+    flex: none;
+    width: 30px;
+    height: 30px;
+    color: var(--g-gold);
+  }
+  .g-hero__media {
+    position: relative;
+    order: -1;
+    display: grid;
+    place-items: center;
+  }
+  .g-hero__float {
+    width: min(100%, 560px);
+    animation: g-float 7s ease-in-out infinite;
+  }
+  .g-hero__product {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.55));
+  }
+  .g-hero__placeholder {
+    aspect-ratio: 1;
+    fill: rgba(236, 230, 216, 0.15);
+    background: var(--g-carbon-2);
+  }
+  .g-hero__badge {
+    position: absolute;
+    top: 4%;
+    right: 2%;
+    display: none;
+    place-items: center;
+    width: 140px;
+    height: 140px;
+    margin: 0;
+    padding: 18px;
+    border: 1px solid var(--g-line);
+    border-radius: 50%;
+    text-align: center;
+    font-size: 0.66rem;
+    letter-spacing: 0.24em;
+    line-height: 1.8;
+    text-transform: uppercase;
+    color: var(--g-ivory);
+    backdrop-filter: blur(4px);
+  }
+  @keyframes g-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-14px);
+    }
+  }
+  @media (min-width: 990px) {
+    .g-hero__grid {
+      grid-template-columns: 1.05fr 1fr;
+      gap: 48px;
+    }
+    .g-hero__media {
+      order: 0;
+    }
+    .g-hero__badge {
+      display: grid;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .g-hero__float {
+      animation: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "GRINOLA · Hero",
+  "tag": "div",
+  "class": "g-section",
+  "settings": [
+    { "type": "image_picker", "id": "background", "label": "Fondo (escena, vegetación, piedra)" },
+    { "type": "image_picker", "id": "product_image", "label": "Producto protagonista (PNG sin fondo ideal)" },
+    { "type": "text", "id": "eyebrow", "label": "Texto superior", "default": "Piezas que inspiran" },
+    { "type": "text", "id": "heading", "label": "Título", "default": "GRINOLA" },
+    { "type": "text", "id": "subheading", "label": "Subtítulo", "default": "Naturalmente diferente." },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Texto",
+      "default": "<p>Grinders, estuches y piezas coleccionables impresas en 3D. Elige tamaño y color, y compra en línea.</p>"
+    },
+    { "type": "text", "id": "button_label", "label": "Botón principal", "default": "Comprar ahora" },
+    { "type": "url", "id": "button_link", "label": "Enlace del botón" },
+    { "type": "text", "id": "link_label", "label": "Enlace secundario", "default": "Ver ediciones limitadas" },
+    { "type": "url", "id": "link_url", "label": "Destino del enlace secundario" },
+    { "type": "text", "id": "badge", "label": "Sello circular (escritorio)", "default": "Arte funcional para tu colección" }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Beneficio",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icono",
+          "options": [
+            { "value": "leaf", "label": "Hoja" },
+            { "value": "gem", "label": "Diamante" },
+            { "value": "cube", "label": "Cubo" },
+            { "value": "gear", "label": "Engranaje" },
+            { "value": "star", "label": "Estrella" },
+            { "value": "layers", "label": "Capas" },
+            { "value": "palette", "label": "Paleta" },
+            { "value": "shield", "label": "Escudo" },
+            { "value": "truck", "label": "Envío" }
+          ],
+          "default": "leaf"
+        },
+        { "type": "text", "id": "text", "label": "Texto", "default": "Impreso en 3D" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "GRINOLA · Hero",
+      "blocks": [
+        { "type": "feature", "settings": { "icon": "cube", "text": "Impreso en 3D" } },
+        { "type": "feature", "settings": { "icon": "palette", "text": "Tamaño y color a elección" } },
+        { "type": "feature", "settings": { "icon": "layers", "text": "Coleccionable y funcional" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

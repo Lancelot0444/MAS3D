@@ -1,0 +1,256 @@
+{% render 'grinola-motion' %}
+
+{%- liquid
+  assign source = section.settings.collection
+  if source == blank
+    assign source = collections.all
+  endif
+  assign view_url = source.url | default: routes.all_products_collection_url
+-%}
+
+<section class="g-scope g-fp" style="--g-cols: {{ section.settings.columns }}">
+  <div class="g-wrap">
+    <div class="g-fp__head" data-g-reveal>
+      <h2 class="g-title g-fp__heading">{{ section.settings.heading }}</h2>
+      {%- if section.settings.view_all_label != blank -%}
+        <a class="g-link" href="{{ view_url }}">
+          {{- section.settings.view_all_label -}}
+          {% render 'grinola-icon', name: 'arrow' %}
+        </a>
+      {%- endif -%}
+    </div>
+
+    <ul class="g-fp__track" role="list">
+      {%- for product in source.products limit: section.settings.limit -%}
+        {%- liquid
+          assign second_media = product.media[1]
+          assign is_limited = false
+          if product.tags contains section.settings.limited_tag
+            assign is_limited = true
+          endif
+        -%}
+        <li class="g-fp__item" data-g-reveal style="--g-delay: {{ forloop.index0 | times: 70 }}ms">
+          <a class="g-card g-fp__card" href="{{ product.url }}">
+            <div class="g-fp__media">
+              {%- if product.featured_media -%}
+                {{
+                  product.featured_media
+                  | image_url: width: 900
+                  | image_tag:
+                    loading: 'lazy',
+                    sizes: '(min-width: 990px) 18vw, 62vw',
+                    widths: '300, 500, 700, 900',
+                    class: 'g-fp__img g-fp__img--main'
+                }}
+                {%- if second_media -%}
+                  {{
+                    second_media
+                    | image_url: width: 900
+                    | image_tag:
+                      loading: 'lazy',
+                      sizes: '(min-width: 990px) 18vw, 62vw',
+                      widths: '300, 500, 700, 900',
+                      class: 'g-fp__img g-fp__img--alt',
+                      alt: ''
+                  }}
+                {%- endif -%}
+              {%- else -%}
+                {{ 'product-1' | placeholder_svg_tag: 'g-fp__img g-fp__placeholder' }}
+              {%- endif -%}
+              {%- if is_limited and section.settings.limited_label != blank -%}
+                <span class="g-fp__badge">{{ section.settings.limited_label }}</span>
+              {%- endif -%}
+              {%- unless product.available -%}
+                <span class="g-fp__badge g-fp__badge--out">{{ section.settings.sold_out_label }}</span>
+              {%- endunless -%}
+            </div>
+            <div class="g-fp__info">
+              <h3 class="g-fp__title">{{ product.title }}</h3>
+              <p class="g-fp__price">
+                {%- if product.price_varies -%}
+                  {{ section.settings.from_label }}
+                  {{ product.price_min | money }}
+                {%- else -%}
+                  {{ product.price | money }}
+                {%- endif -%}
+              </p>
+              <span class="g-btn g-btn--ghost g-fp__cta">{{ section.settings.button_label }}</span>
+            </div>
+          </a>
+        </li>
+      {%- else -%}
+        {%- for i in (1..6) -%}
+          <li class="g-fp__item" data-g-reveal>
+            <div class="g-card g-fp__card">
+              <div class="g-fp__media">{{ 'product-1' | placeholder_svg_tag: 'g-fp__img g-fp__placeholder' }}</div>
+              <div class="g-fp__info">
+                <h3 class="g-fp__title">{{ section.settings.empty_label }}</h3>
+              </div>
+            </div>
+          </li>
+        {%- endfor -%}
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+{% stylesheet %}
+  .g-fp {
+    padding-block: 48px;
+  }
+  .g-fp__head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 22px;
+  }
+  .g-fp__heading {
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+  }
+  .g-fp__track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 62%;
+    gap: 14px;
+    margin: 0;
+    padding: 0 0 6px;
+    list-style: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .g-fp__track::-webkit-scrollbar {
+    display: none;
+  }
+  .g-fp__item {
+    scroll-snap-align: start;
+  }
+  .g-fp__card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid var(--g-line);
+    border-radius: 6px;
+    background: var(--g-carbon-2);
+    color: var(--g-ivory);
+    text-decoration: none;
+    transition: border-color 0.45s var(--g-ease), transform 0.45s var(--g-ease), box-shadow 0.45s var(--g-ease);
+  }
+  .g-fp__media {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: #0c0d0b;
+  }
+  .g-fp__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.6s var(--g-ease), transform 0.9s var(--g-ease);
+  }
+  .g-fp__img--alt {
+    opacity: 0;
+  }
+  .g-fp__placeholder {
+    fill: rgba(236, 230, 216, 0.12);
+  }
+  .g-fp__badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    border-radius: 2px;
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #111310;
+    background: var(--g-gold);
+  }
+  .g-fp__badge--out {
+    left: auto;
+    right: 10px;
+    color: var(--g-ivory);
+    background: #2c3529;
+  }
+  .g-fp__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    gap: 6px;
+    padding: 14px 12px 16px;
+    text-align: center;
+  }
+  .g-fp__title {
+    margin: 0;
+    font-family: var(--font-body--family);
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  .g-fp__price {
+    margin: 0;
+    font-size: 1.05rem;
+    color: var(--g-gold-light);
+  }
+  .g-fp__cta {
+    width: 100%;
+    min-height: 38px;
+    margin-top: auto;
+    font-size: 0.82rem;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .g-fp__card:hover {
+      border-color: var(--g-gold);
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+    }
+    .g-fp__card:hover .g-fp__img--main {
+      transform: scale(1.06);
+    }
+    .g-fp__card:hover .g-fp__img--alt {
+      opacity: 1;
+    }
+    .g-fp__card:hover .g-fp__cta {
+      color: #111310;
+      background: var(--g-gold);
+    }
+  }
+  @media (min-width: 750px) {
+    .g-fp__track {
+      grid-auto-columns: 38%;
+    }
+  }
+  @media (min-width: 990px) {
+    .g-fp__track {
+      grid-auto-flow: row;
+      grid-template-columns: repeat(var(--g-cols, 6), 1fr);
+      overflow: visible;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "GRINOLA · Productos",
+  "tag": "div",
+  "class": "g-section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Título", "default": "Productos destacados" },
+    { "type": "collection", "id": "collection", "label": "Colección (vacío = todos)" },
+    { "type": "range", "id": "limit", "label": "Cantidad", "min": 3, "max": 12, "step": 1, "default": 6 },
+    { "type": "range", "id": "columns", "label": "Columnas en escritorio", "min": 3, "max": 6, "step": 1, "default": 6 },
+    { "type": "text", "id": "view_all_label", "label": "Enlace ver todo", "default": "Ver todos los productos" },
+    { "type": "text", "id": "button_label", "label": "Botón", "default": "Ver producto" },
+    { "type": "text", "id": "from_label", "label": "Prefijo de precio con tamaños", "default": "Desde" },
+    { "type": "text", "id": "limited_tag", "label": "Etiqueta que activa el sello", "default": "limited" },
+    { "type": "text", "id": "limited_label", "label": "Sello", "default": "Limited Edition" },
+    { "type": "text", "id": "sold_out_label", "label": "Agotado", "default": "Agotado" },
+    { "type": "text", "id": "empty_label", "label": "Texto sin productos", "default": "Próximamente" }
+  ],
+  "presets": [{ "name": "GRINOLA · Productos" }]
+}
+{% endschema %}
