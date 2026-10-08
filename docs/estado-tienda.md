@@ -31,3 +31,13 @@ Un producto limitado lleva dos etiquetas, ej. `limited` + `anime`.
 - Zona horaria: cambiar EDT → America/Guayaquil (Configuración → General).
 - Pasarela: solicitud a Kushki (+ PayPhone como alternativa).
 - Design system, logo, tema (en copia del tema, nunca en el MAIN), páginas, políticas, envíos, SEO, QA.
+
+## Avance 2026-10-08 (tema "Grinola - Desarrollo", id 163145941097, sin publicar)
+- Sistema visual: fondo #111310, texto #ECE6D8, champagne #C9B07A (botones), bosque #1E2B1F, bordes #2C3529. Tipos: Bodoni Moda (títulos), Jost (texto, cercana al logotipo GRINOLA).
+- Cabecera: menú `grinola-principal`, barra "Impreso en 3D en Ecuador", sin selector de país/idioma.
+- Home: hero, GRINOLA Core, Limited Editions, beneficios, colecciones, proceso (propuesta), FAQ, newsletter.
+- Colecciones renombradas: `grinola-core`, `limited-editions` (+ SEO en las 5).
+- Páginas borrador (no publicadas): nosotros, preguntas-frecuentes, envios, devoluciones, contacto.
+- Menú pie: `grinola-ayuda`.
+- Dominios libres: grinola.store ($9), somosgrinola.com ($16), grinola.org ($16), grinola.net ($19). Ocupados: .com/.ec/.shop.
+- Pendiente: plantilla de producto (PDP), footer, logo subido (archivo), productos.
