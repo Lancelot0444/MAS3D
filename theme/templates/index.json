@@ -1,1 +1,199 @@
-{"sections": {"hero": {"type": "hero", "blocks": {"h": {"type": "text", "settings": {"text": "<h1>Naturalmente diferente.</h1>", "type_preset": "h1", "font": "var(--font-body--family)", "font_size": "", "line_height": "normal", "letter_spacing": "normal", "case": "none", "wrap": "pretty", "width": "fit-content", "max_width": "normal", "alignment": "left", "padding-block-start": 0, "padding-block-end": 0, "padding-inline-start": 0, "padding-inline-end": 0}, "blocks": {}}, "p": {"type": "text", "settings": {"text": "<p>Grinders, estuches y piezas coleccionables impresas en 3D. Elige tamaño y color, y compra en línea.</p>", "type_preset": "rte", "font": "var(--font-body--family)", "font_size": "", "line_height": "normal", "letter_spacing": "normal", "case": "none", "wrap": "pretty", "width": "fit-content", "max_width": "narrow", "alignment": "left", "padding-block-start": 0, "padding-block-end": 0, "padding-inline-start": 0, "padding-inline-end": 0}, "blocks": {}}, "b1": {"type": "button", "settings": {"label": "Comprar", "link": "shopify://collections/all", "open_in_new_tab": false, "style_class": "button", "width": "fit-content", "custom_width": 100, "width_mobile": "fit-content", "custom_width_mobile": 100}, "blocks": {}}, "b2": {"type": "button", "settings": {"label": "Ver ediciones limitadas", "link": "shopify://collections/limited-editions", "open_in_new_tab": false, "style_class": "button-secondary", "width": "fit-content", "custom_width": 100, "width_mobile": "fit-content", "custom_width_mobile": 100}, "blocks": {}}}, "block_order": ["h", "p", "b1", "b2"], "settings": {"media_type_1": "image", "media_type_2": "image", "stack_media_on_mobile": false, "custom_mobile_media": false, "content_direction": "column", "vertical_on_mobile": true, "horizontal_alignment": "flex-start", "vertical_alignment": "flex-end", "horizontal_alignment_flex_direction_column": "flex-start", "vertical_alignment_flex_direction_column": "flex-end", "gap": 20, "section_width": "full-width", "section_height": "large", "background_color": "#111310", "toggle_overlay": true, "overlay_color": "#11131099", "overlay_style": "gradient", "gradient_direction": "to top", "padding-block-start": 120, "padding-block-end": 64}}, "core": {"type": "product-list", "blocks": {"static-header": {"type": "_product-list-content", "static": true, "settings": {"content_direction": "row", "vertical_on_mobile": false, "horizontal_alignment": "space-between", "vertical_alignment": "flex-end", "align_baseline": true, "gap": 12, "width": "fill", "height": "fit"}, "blocks": {"t": {"type": "_product-list-text", "settings": {"text": "<h2>GRINOLA Core</h2>", "type_preset": "h2", "font": "var(--font-heading--family)", "alignment": "left", "width": "fit-content"}, "blocks": {}}, "b": {"type": "_product-list-button", "settings": {"label": "Ver toda la línea", "style_class": "link", "width": "fit-content"}, "blocks": {}}}, "block_order": ["t", "b"]}, "static-product-card": {"type": "_product-card", "static": true, "settings": {"product_card_gap": 8}, "blocks": {"g": {"type": "_product-card-gallery", "settings": {"image_ratio": "square"}, "blocks": {}}, "pt": {"type": "product-title", "settings": {"type_preset": "rte", "font": "var(--font-body--family)", "alignment": "left", "width": "100%", "padding-block-start": 8}, "blocks": {}}, "pr": {"type": "price", "settings": {"type_preset": "h6", "alignment": "left", "width": "100%", "show_sale_price_first": true, "show_installments": false, "show_tax_info": false}, "blocks": {}}}, "block_order": ["g", "pt", "pr"]}}, "settings": {"collection": "grinola-core", "layout_type": "grid", "carousel_on_mobile": false, "max_products": 8, "columns": 4, "mobile_columns": "2", "mobile_card_size": "60cqw", "columns_gap": 12, "rows_gap": 32, "icons_style": "arrow", "icons_shape": "none", "section_width": "page-width", "horizontal_alignment": "flex-start", "gap": 28, "padding-block-start": 56, "padding-block-end": 56}}, "limited": {"type": "product-list", "blocks": {"static-header": {"type": "_product-list-content", "static": true, "settings": {"content_direction": "row", "vertical_on_mobile": false, "horizontal_alignment": "space-between", "vertical_alignment": "flex-end", "align_baseline": true, "gap": 12, "width": "fill", "height": "fit"}, "blocks": {"t": {"type": "_product-list-text", "settings": {"text": "<h2>Limited Editions</h2>", "type_preset": "h2", "font": "var(--font-heading--family)", "alignment": "left", "width": "fit-content"}, "blocks": {}}, "b": {"type": "_product-list-button", "settings": {"label": "Ver ediciones", "style_class": "link", "width": "fit-content"}, "blocks": {}}}, "block_order": ["t", "b"]}, "static-product-card": {"type": "_product-card", "static": true, "settings": {"product_card_gap": 8}, "blocks": {"g": {"type": "_product-card-gallery", "settings": {"image_ratio": "square"}, "blocks": {}}, "pt": {"type": "product-title", "settings": {"type_preset": "rte", "font": "var(--font-body--family)", "alignment": "left", "width": "100%", "padding-block-start": 8}, "blocks": {}}, "pr": {"type": "price", "settings": {"type_preset": "h6", "alignment": "left", "width": "100%", "show_sale_price_first": true, "show_installments": false, "show_tax_info": false}, "blocks": {}}}, "block_order": ["g", "pt", "pr"]}}, "settings": {"collection": "limited-editions", "layout_type": "carousel", "carousel_on_mobile": true, "max_products": 8, "columns": 4, "mobile_columns": "2", "mobile_card_size": "60cqw", "columns_gap": 12, "rows_gap": 32, "icons_style": "arrow", "icons_shape": "none", "section_width": "page-width", "horizontal_alignment": "flex-start", "gap": 28, "padding-block-start": 56, "padding-block-end": 56}}, "beneficios": {"type": "section", "blocks": {"h": {"type": "text", "settings": {"text": "<h2>Por qué GRINOLA</h2>", "type_preset": "h2", "font": "var(--font-body--family)", "font_size": "", "line_height": "normal", "letter_spacing": "normal", "case": "none", "wrap": "pretty", "width": "fit-content", "max_width": "normal", "alignment": "left", "padding-block-start": 0, "padding-block-end": 0, "padding-inline-start": 0, "padding-inline-end": 0}, "blocks": {}}, "c": {"type": "group", "settings": {"content_direction": "row", "vertical_on_mobile": true, "horizontal_alignment": "space-between", "vertical_alignment": "flex-start", "gap": 32, "width": "fill", "height": "fit"}, "blocks": {"a": {"type": "text", "settings": {"text": "<h3>Impreso en 3D</h3><p>Cada pieza se fabrica capa por capa en PLA.</p>", "type_preset": "rte", "font": "var(--font-body--family)", "font_size": "", "line_height": "normal", "letter_spacing": "normal", "case": "none", "wrap": "pretty", "width": "fit-content", "max_width": "normal", "alignment": "left", "padding-block-start": 0, "padding-block-end": 0, "padding-inline-start": 0, "padding-inline-end": 0}, "blocks": {}}, "b": {"type": "text", "settings": {"text": "<h3>Tamaño y color a elección</h3><p>Elige la versión que va contigo directamente en la ficha.</p>", "type_preset": "rte", "font": "var(--font-body--family)", "font_size": "", "line_height": "normal", "letter_spacing": "normal", "case": "none", "wrap": "pretty", "width": "fit-content", "max_width": "normal", "alignment": "left", "padding-block-start": 0, "padding-block-end": 0, "padding-inline-start": 0, "padding-inline-end": 0}, "blocks": {}}, "d": {"type": "text", "settings": {"text": "<h3>Compra en línea</h3><p>Agrega al carrito y finaliza tu pedido sin escribirnos.</p>", "type_preset": "rte", "font": "var(--font-body--family)", "font_size": "", "line_height": "normal", "letter_spacing": "normal", "case": "none", "wrap": "pretty", "width": "fit-content", "max_width": "normal", "alignment": "left", "padding-block-start": 0, "padding-block-end": 0, "padding-inline-start": 0, "padding-inline-end": 0}, "blocks": {}}}, "block_order": ["a", "b", "d"]}}, "block_order": ["h", "c"], "settings": {"content_direction": "column", "vertical_on_mobile": true, "horizontal_alignment": "flex-start", "vertical_alignment": "center", "horizontal_alignment_flex_direction_column": "flex-start", "vertical_alignment_flex_direction_column": "center", "gap": 20, "section_width": "page-width", "section_height": "", "background_media": "none", "border": "none", "padding-block-start": 64, "padding-block-end": 64, "background_color": "#1E2B1F"}}, "colecciones": {"type": "collection-list", "blocks": {"h": {"type": "text", "settings": {"text": "<h2>Colecciones</h2>", "type_preset": "h2", "font": "var(--font-body--family)", "font_size": "", "line_height": "normal", "letter_spacing": "normal", "case": "none", "wrap": "pretty", "width": "fit-content", "max_width": "normal", "alignment": "left", "padding-block-start": 0, "padding-block-end": 0, "padding-inline-start": 0, "padding-inline-end": 0}, "blocks": {}}, "static-collection-card": {"type": "_collection-card", "static": true, "settings": {"horizontal_alignment": "flex-start", "vertical_alignment": "flex-end", "placement": "on_image"}, "blocks": {"collection-card-image": {"type": "_collection-card-image", "static": true, "settings": {"image_ratio": "portrait"}, "blocks": {}}, "collection-title": {"type": "collection-title", "settings": {"type_preset": "h4", "alignment": "left", "width": "fit-content", "background": false, "padding-block-start": 8, "padding-block-end": 8, "padding-inline-start": 12, "padding-inline-end": 12}, "blocks": {}}}, "block_order": ["collection-title"]}}, "block_order": ["h"], "settings": {"collection_list": ["grinola-core", "anime-editions", "fantasy-editions", "sweet-editions"], "layout_type": "grid", "carousel_on_mobile": true, "columns": 4, "mobile_columns": "2", "columns_gap": 12, "rows_gap": 12, "max_collections": 4, "section_width": "page-width", "gap": 24, "padding-block-start": 56, "padding-block-end": 56}}, "proceso": {"type": "section", "blocks": {"h": {"type": "text", "settings": {"text": "<h2>Cómo se fabrica</h2>", "type_preset": "h2", "font": "var(--font-body--family)", "font_size": "", "line_height": "normal", "letter_spacing": "normal", "case": "none", "wrap": "pretty", "width": "fit-content", "max_width": "normal", "alignment": "left", "padding-block-start": 0, "padding-block-end": 0, "padding-inline-start": 0, "padding-inline-end": 0}, "blocks": {}}, "p": {"type": "text", "settings": {"text": "<p>Cada modelo se imprime en 3D y se prepara para el envío. [PROPUESTA: completar con el proceso real: tiempos, revisión y empaque]</p>", "type_preset": "rte", "font": "var(--font-body--family)", "font_size": "", "line_height": "normal", "letter_spacing": "normal", "case": "none", "wrap": "pretty", "width": "fit-content", "max_width": "narrow", "alignment": "left", "padding-block-start": 0, "padding-block-end": 0, "padding-inline-start": 0, "padding-inline-end": 0}, "blocks": {}}}, "block_order": ["h", "p"], "settings": {"content_direction": "column", "vertical_on_mobile": true, "horizontal_alignment": "flex-start", "vertical_alignment": "center", "horizontal_alignment_flex_direction_column": "flex-start", "vertical_alignment_flex_direction_column": "center", "gap": 20, "section_width": "page-width", "section_height": "", "background_media": "none", "border": "none", "padding-block-start": 64, "padding-block-end": 64}}, "faq": {"type": "section", "blocks": {"h": {"type": "text", "settings": {"text": "<h2>Preguntas frecuentes</h2>", "type_preset": "h2", "font": "var(--font-body--family)", "font_size": "", "line_height": "normal", "letter_spacing": "normal", "case": "none", "wrap": "pretty", "width": "fit-content", "max_width": "normal", "alignment": "left", "padding-block-start": 0, "padding-block-end": 0, "padding-inline-start": 0, "padding-inline-end": 0}, "blocks": {}}, "acc": {"type": "accordion", "settings": {"icon": "caret", "dividers": true, "type_preset": "h5"}, "blocks": {"r0": {"type": "_accordion-row", "settings": {"heading": "¿Cómo compro?"}, "blocks": {"t": {"type": "text", "settings": {"text": "<p>Elige el producto, selecciona tamaño y color, agrégalo al carrito y finaliza tu pedido.</p>", "type_preset": "rte", "font": "var(--font-body--family)", "font_size": "", "line_height": "normal", "letter_spacing": "normal", "case": "none", "wrap": "pretty", "width": "100%", "max_width": "normal", "alignment": "left", "padding-block-start": 0, "padding-block-end": 0, "padding-inline-start": 0, "padding-inline-end": 0}, "blocks": {}}}, "block_order": ["t"]}, "r1": {"type": "_accordion-row", "settings": {"heading": "¿Qué métodos de pago aceptan?"}, "blocks": {"t": {"type": "text", "settings": {"text": "<p>Por ahora, transferencia bancaria. Al finalizar el pedido verás los datos y cómo enviar tu comprobante.</p>", "type_preset": "rte", "font": "var(--font-body--family)", "font_size": "", "line_height": "normal", "letter_spacing": "normal", "case": "none", "wrap": "pretty", "width": "100%", "max_width": "normal", "alignment": "left", "padding-block-start": 0, "padding-block-end": 0, "padding-inline-start": 0, "padding-inline-end": 0}, "blocks": {}}}, "block_order": ["t"]}, "r2": {"type": "_accordion-row", "settings": {"heading": "¿Hacen envíos?"}, "blocks": {"t": {"type": "text", "settings": {"text": "<p>Enviamos dentro de Ecuador. El costo se calcula al finalizar el pedido.</p>", "type_preset": "rte", "font": "var(--font-body--family)", "font_size": "", "line_height": "normal", "letter_spacing": "normal", "case": "none", "wrap": "pretty", "width": "100%", "max_width": "normal", "alignment": "left", "padding-block-start": 0, "padding-block-end": 0, "padding-inline-start": 0, "padding-inline-end": 0}, "blocks": {}}}, "block_order": ["t"]}, "r3": {"type": "_accordion-row", "settings": {"heading": "¿De qué material son?"}, "blocks": {"t": {"type": "text", "settings": {"text": "<p>Imprimimos en PLA. Cada ficha indica medidas y peso.</p>", "type_preset": "rte", "font": "var(--font-body--family)", "font_size": "", "line_height": "normal", "letter_spacing": "normal", "case": "none", "wrap": "pretty", "width": "100%", "max_width": "normal", "alignment": "left", "padding-block-start": 0, "padding-block-end": 0, "padding-inline-start": 0, "padding-inline-end": 0}, "blocks": {}}}, "block_order": ["t"]}, "r4": {"type": "_accordion-row", "settings": {"heading": "¿Qué es una Limited Edition?"}, "blocks": {"t": {"type": "text", "settings": {"text": "<p>Un diseño de colección. Si tiene unidades limitadas, la ficha indica cuántas existen. Si es bajo pedido, lo dice claramente.</p>", "type_preset": "rte", "font": "var(--font-body--family)", "font_size": "", "line_height": "normal", "letter_spacing": "normal", "case": "none", "wrap": "pretty", "width": "100%", "max_width": "normal", "alignment": "left", "padding-block-start": 0, "padding-block-end": 0, "padding-inline-start": 0, "padding-inline-end": 0}, "blocks": {}}}, "block_order": ["t"]}}, "block_order": ["r0", "r1", "r2", "r3", "r4"]}, "b": {"type": "button", "settings": {"label": "Ver todas las preguntas", "link": "shopify://pages/preguntas-frecuentes", "open_in_new_tab": false, "style_class": "link", "width": "fit-content", "custom_width": 100, "width_mobile": "fit-content", "custom_width_mobile": 100}, "blocks": {}}}, "block_order": ["h", "acc", "b"], "settings": {"content_direction": "column", "vertical_on_mobile": true, "horizontal_alignment": "flex-start", "vertical_alignment": "center", "horizontal_alignment_flex_direction_column": "flex-start", "vertical_alignment_flex_direction_column": "center", "gap": 20, "section_width": "page-width", "section_height": "", "background_media": "none", "border": "none", "padding-block-start": 64, "padding-block-end": 64}}, "newsletter": {"type": "section", "blocks": {"h": {"type": "text", "settings": {"text": "<h2>Lanzamientos primero</h2>", "type_preset": "h2", "font": "var(--font-body--family)", "font_size": "", "line_height": "normal", "letter_spacing": "normal", "case": "none", "wrap": "pretty", "width": "fit-content", "max_width": "normal", "alignment": "left", "padding-block-start": 0, "padding-block-end": 0, "padding-inline-start": 0, "padding-inline-end": 0}, "blocks": {}}, "p": {"type": "text", "settings": {"text": "<p>Recibe un correo cuando salga una nueva edición.</p>", "type_preset": "rte", "font": "var(--font-body--family)", "font_size": "", "line_height": "normal", "letter_spacing": "normal", "case": "none", "wrap": "pretty", "width": "fit-content", "max_width": "normal", "alignment": "left", "padding-block-start": 0, "padding-block-end": 0, "padding-inline-start": 0, "padding-inline-end": 0}, "blocks": {}}, "f": {"type": "email-signup", "settings": {}, "blocks": {}}}, "block_order": ["h", "p", "f"], "settings": {"content_direction": "column", "vertical_on_mobile": true, "horizontal_alignment": "flex-start", "vertical_alignment": "center", "horizontal_alignment_flex_direction_column": "flex-start", "vertical_alignment_flex_direction_column": "center", "gap": 20, "section_width": "page-width", "section_height": "", "background_media": "none", "border": "none", "padding-block-start": 64, "padding-block-end": 64, "background_color": "#1E2B1F"}}}, "order": ["hero", "core", "limited", "beneficios", "colecciones", "proceso", "faq", "newsletter"]}
+{
+ "sections": {
+  "hero": {
+   "type": "grinola-hero",
+   "settings": {
+    "eyebrow": "Piezas que inspiran",
+    "heading": "GRINOLA",
+    "subheading": "Naturalmente diferente.",
+    "text": "<p>Grinders, estuches y piezas coleccionables impresas en 3D. Elige tamaño y color, y compra en línea.</p>",
+    "button_label": "Comprar ahora",
+    "button_link": "shopify://collections/all",
+    "link_label": "Ver ediciones limitadas",
+    "link_url": "shopify://collections/limited-editions",
+    "badge": "Arte funcional para tu colección"
+   },
+   "blocks": {
+    "f1": {
+     "type": "feature",
+     "settings": {
+      "icon": "cube",
+      "text": "Impreso en 3D"
+     }
+    },
+    "f2": {
+     "type": "feature",
+     "settings": {
+      "icon": "palette",
+      "text": "Tamaño y color a elección"
+     }
+    },
+    "f3": {
+     "type": "feature",
+     "settings": {
+      "icon": "layers",
+      "text": "Coleccionable y funcional"
+     }
+    }
+   },
+   "block_order": [
+    "f1",
+    "f2",
+    "f3"
+   ]
+  },
+  "colecciones": {
+   "type": "grinola-collection-cards",
+   "settings": {
+    "heading": ""
+   },
+   "blocks": {
+    "c1": {
+     "type": "card",
+     "settings": {
+      "collection": "grinola-core",
+      "subtitle": "Piezas de uso diario",
+      "tint": "#1E2B1F",
+      "link_label": "Ver colección"
+     }
+    },
+    "c2": {
+     "type": "card",
+     "settings": {
+      "collection": "limited-editions",
+      "subtitle": "Tiradas cortas y bajo pedido",
+      "tint": "#2A2418",
+      "link_label": "Ver colección"
+     }
+    },
+    "c3": {
+     "type": "card",
+     "settings": {
+      "collection": "sweet-editions",
+      "subtitle": "Diseño dulce para tu colección",
+      "tint": "#3A1E28",
+      "link_label": "Ver colección"
+     }
+    }
+   },
+   "block_order": [
+    "c1",
+    "c2",
+    "c3"
+   ]
+  },
+  "destacados": {
+   "type": "grinola-featured-products",
+   "settings": {
+    "heading": "Productos destacados",
+    "limit": 6,
+    "columns": 6
+   }
+  },
+  "historia": {
+   "type": "grinola-story",
+   "settings": {
+    "button_link": "shopify://pages/nosotros"
+   }
+  },
+  "pasos": {
+   "type": "grinola-steps",
+   "settings": {
+    "eyebrow": "Tu próxima pieza en 4 pasos",
+    "heading": "Cómo comprar",
+    "numbered": true,
+    "compact": false
+   },
+   "blocks": {
+    "s1": {
+     "type": "item",
+     "settings": {
+      "icon": "cart",
+      "title": "Elige tu pieza",
+      "text": "Selecciona tamaño y color en la ficha."
+     }
+    },
+    "s2": {
+     "type": "item",
+     "settings": {
+      "icon": "cube",
+      "title": "Agrega al carrito",
+      "text": "Revisa tu pedido cuando quieras."
+     }
+    },
+    "s3": {
+     "type": "item",
+     "settings": {
+      "icon": "card",
+      "title": "Finaliza tu pedido",
+      "text": "Pago por transferencia con instrucciones claras."
+     }
+    },
+    "s4": {
+     "type": "item",
+     "settings": {
+      "icon": "truck",
+      "title": "Recibe tu pedido",
+      "text": "Envíos dentro de Ecuador."
+     }
+    }
+   },
+   "block_order": [
+    "s1",
+    "s2",
+    "s3",
+    "s4"
+   ]
+  },
+  "faq": {
+   "type": "grinola-faq",
+   "settings": {
+    "link_url": "shopify://pages/preguntas-frecuentes"
+   },
+   "blocks": {
+    "q1": {
+     "type": "question",
+     "settings": {
+      "question": "¿Cómo compro?",
+      "answer": "<p>Elige el producto, selecciona tamaño y color, agrégalo al carrito y finaliza tu pedido.</p>"
+     }
+    },
+    "q2": {
+     "type": "question",
+     "settings": {
+      "question": "¿Qué métodos de pago aceptan?",
+      "answer": "<p>Por ahora, transferencia bancaria. Al finalizar el pedido verás los datos y cómo enviar tu comprobante.</p>"
+     }
+    },
+    "q3": {
+     "type": "question",
+     "settings": {
+      "question": "¿De qué material son?",
+      "answer": "<p>Imprimimos en PLA. Cada ficha indica medidas y peso.</p>"
+     }
+    },
+    "q4": {
+     "type": "question",
+     "settings": {
+      "question": "¿Hacen envíos?",
+      "answer": "<p>Enviamos dentro de Ecuador. El costo se calcula al finalizar el pedido.</p>"
+     }
+    }
+   },
+   "block_order": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  }
+ },
+ "order": [
+  "hero",
+  "colecciones",
+  "destacados",
+  "historia",
+  "pasos",
+  "faq"
+ ]
+}
