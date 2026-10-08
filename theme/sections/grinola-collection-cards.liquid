@@ -29,7 +29,7 @@
                 | image_tag: loading: 'lazy', sizes: '(min-width: 990px) 33vw, 82vw', widths: '400, 700, 1100', alt: card_title
               }}
             {%- else -%}
-              {{ 'collection-1' | placeholder_svg_tag: 'g-cc__placeholder' }}
+              <div class="g-cc__placeholder">{% render 'grinola-icon', name: 'leaf' %}</div>
             {%- endif -%}
           </div>
           <div class="g-cc__body">
@@ -95,7 +95,10 @@
     transition: transform 1.1s var(--g-ease);
   }
   .g-cc__placeholder {
-    fill: rgba(236, 230, 216, 0.12);
+    display: grid;
+    place-items: center;
+    padding: 18%;
+    color: rgba(201, 176, 122, 0.35);
   }
   .g-cc__card::after {
     content: '';

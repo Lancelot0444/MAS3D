@@ -55,7 +55,7 @@
                   }}
                 {%- endif -%}
               {%- else -%}
-                {{ 'product-1' | placeholder_svg_tag: 'g-fp__img g-fp__placeholder' }}
+                <div class="g-fp__img g-fp__placeholder">{% render 'grinola-icon', name: 'leaf' %}</div>
               {%- endif -%}
               {%- if is_limited and section.settings.limited_label != blank -%}
                 <span class="g-fp__badge">{{ section.settings.limited_label }}</span>
@@ -82,7 +82,7 @@
         {%- for i in (1..6) -%}
           <li class="g-fp__item" data-g-reveal>
             <div class="g-card g-fp__card">
-              <div class="g-fp__media">{{ 'product-1' | placeholder_svg_tag: 'g-fp__img g-fp__placeholder' }}</div>
+              <div class="g-fp__media"><div class="g-fp__img g-fp__placeholder">{% render 'grinola-icon', name: 'leaf' %}</div></div>
               <div class="g-fp__info">
                 <h3 class="g-fp__title">{{ section.settings.empty_label }}</h3>
               </div>
@@ -156,7 +156,10 @@
     opacity: 0;
   }
   .g-fp__placeholder {
-    fill: rgba(236, 230, 216, 0.12);
+    display: grid;
+    place-items: center;
+    padding: 28%;
+    color: rgba(201, 176, 122, 0.3);
   }
   .g-fp__badge {
     position: absolute;

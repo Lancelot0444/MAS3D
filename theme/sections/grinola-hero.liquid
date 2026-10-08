@@ -74,7 +74,7 @@
                 class: 'g-hero__product'
             }}
           {%- else -%}
-            {{ 'product-apparel-1' | placeholder_svg_tag: 'g-hero__product g-hero__placeholder' }}
+            <div class="g-hero__product g-hero__placeholder">{% render 'grinola-icon', name: 'leaf' %}</div>
           {%- endif -%}
         </div>
       </div>
@@ -102,6 +102,13 @@
     height: 100%;
     object-fit: cover;
     opacity: 0.55;
+  }
+  .g-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(60% 70% at 72% 45%, rgba(107, 122, 75, 0.35) 0%, rgba(30, 43, 31, 0.25) 35%, rgba(17, 19, 16, 0) 70%);
+    pointer-events: none;
   }
   .g-hero__veil {
     background: radial-gradient(120% 90% at 75% 40%, rgba(17, 19, 16, 0) 0%, rgba(17, 19, 16, 0.75) 60%, #111310 100%),
@@ -175,12 +182,18 @@
     display: block;
     width: 100%;
     height: auto;
+    border-radius: 8px;
     filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.55));
+    -webkit-mask-image: radial-gradient(75% 75% at 50% 50%, #000 60%, transparent 100%);
+    mask-image: radial-gradient(75% 75% at 50% 50%, #000 60%, transparent 100%);
   }
   .g-hero__placeholder {
+    display: grid;
+    place-items: center;
     aspect-ratio: 1;
-    fill: rgba(236, 230, 216, 0.15);
-    background: var(--g-carbon-2);
+    padding: 22%;
+    color: var(--g-gold);
+    filter: drop-shadow(0 0 40px rgba(201, 176, 122, 0.35));
   }
   .g-hero__badge {
     position: absolute;
