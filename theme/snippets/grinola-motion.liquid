@@ -1,0 +1,228 @@
+{% doc %}
+  Loads the GRINOLA design tokens, scroll-reveal and pointer-tilt behaviour shared by all grinola-* sections.
+  Elements opt in with data-g-reveal (fade up on scroll) and data-g-tilt (3D tilt following the pointer on desktop).
+
+  @example
+  {% render 'grinola-motion' %}
+{% enddoc %}
+
+{% stylesheet %}
+  .g-scope {
+    --g-carbon: #111310;
+    --g-carbon-2: #161a15;
+    --g-forest: #1e2b1f;
+    --g-olive: #6b7a4b;
+    --g-gold: #c9b07a;
+    --g-gold-light: #f1e2b8;
+    --g-gold-deep: #8e6b2e;
+    --g-ivory: #ece6d8;
+    --g-muted: #b9b3a5;
+    --g-line: rgba(201, 176, 122, 0.28);
+    --g-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+    color: var(--g-ivory);
+    background: var(--g-carbon);
+    font-family: var(--font-body--family);
+    position: relative;
+    overflow: hidden;
+  }
+  .g-scope *,
+  .g-scope *::before,
+  .g-scope *::after {
+    box-sizing: border-box;
+  }
+  .g-wrap {
+    width: min(100% - 32px, 1280px);
+    margin-inline: auto;
+  }
+  .g-eyebrow {
+    font-family: var(--font-body--family);
+    font-size: 0.72rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--g-gold);
+    margin: 0 0 12px;
+  }
+  .g-title {
+    font-family: var(--font-heading--family);
+    font-weight: 500;
+    line-height: 1.05;
+    margin: 0;
+    color: var(--g-ivory);
+  }
+  .g-gold-text {
+    background: linear-gradient(180deg, var(--g-gold-light) 0%, var(--g-gold) 55%, var(--g-gold-deep) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .g-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 0 26px;
+    border-radius: 999px;
+    font-family: var(--font-body--family);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.35s var(--g-ease), box-shadow 0.35s var(--g-ease), background-color 0.35s var(--g-ease),
+      color 0.35s var(--g-ease);
+  }
+  .g-btn--gold {
+    color: var(--g-carbon);
+    background: linear-gradient(180deg, var(--g-gold-light), var(--g-gold));
+    border: 0;
+  }
+  .g-btn--ghost {
+    color: var(--g-ivory);
+    background: transparent;
+    border: 1px solid var(--g-gold);
+  }
+  .g-btn:focus-visible,
+  .g-link:focus-visible,
+  .g-card:focus-visible {
+    outline: 2px solid var(--g-gold);
+    outline-offset: 3px;
+  }
+  .g-btn svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.35s var(--g-ease);
+  }
+  .g-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--g-ivory);
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--g-gold);
+  }
+  .g-link svg {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.35s var(--g-ease);
+  }
+  .g-icon {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .g-ring {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 52px;
+    height: 52px;
+    padding: 13px;
+    border: 1px solid var(--g-gold);
+    border-radius: 50%;
+    color: var(--g-gold);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .g-btn--gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(201, 176, 122, 0.25);
+    }
+    .g-btn--ghost:hover {
+      background: rgba(201, 176, 122, 0.12);
+    }
+    .g-btn:hover svg,
+    .g-link:hover svg {
+      transform: translateX(4px);
+    }
+  }
+  .g-motion [data-g-reveal] {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s var(--g-ease), transform 0.9s var(--g-ease);
+    transition-delay: var(--g-delay, 0ms);
+  }
+  .g-motion [data-g-reveal='zoom'] {
+    transform: scale(0.94);
+  }
+  .g-motion [data-g-reveal].is-in {
+    opacity: 1;
+    transform: none;
+  }
+  [data-g-tilt] {
+    transition: transform 0.6s var(--g-ease);
+    will-change: transform;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .g-motion [data-g-reveal] {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    [data-g-tilt] {
+      transition: none;
+      transform: none !important;
+    }
+  }
+{% endstylesheet %}
+
+{% javascript %}
+  (() => {
+    if (window.__grinolaMotion) return;
+    window.__grinolaMotion = true;
+    const root = document.documentElement;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const design = window.Shopify && window.Shopify.designMode;
+    if (!reduce && !design && 'IntersectionObserver' in window) root.classList.add('g-motion');
+
+    const io =
+      'IntersectionObserver' in window
+        ? new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('is-in');
+                  io.unobserve(entry.target);
+                }
+              });
+            },
+            { rootMargin: '0px 0px -8% 0px', threshold: 0.12 }
+          )
+        : null;
+
+    const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    const bindTilt = (el) => {
+      if (el.dataset.gTiltBound || reduce || !fine) return;
+      el.dataset.gTiltBound = '1';
+      const max = parseFloat(el.dataset.gTilt) || 8;
+      const area = el.closest('[data-g-tilt-area]') || el;
+      area.addEventListener('pointermove', (event) => {
+        const rect = area.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
+        el.style.transform = `perspective(900px) rotateY(${x * max}deg) rotateX(${-y * max}deg) translate3d(${x * 10}px, ${y * 10}px, 0)`;
+      });
+      area.addEventListener('pointerleave', () => {
+        el.style.transform = '';
+      });
+    };
+
+    const scan = (scope) => {
+      scope.querySelectorAll('[data-g-reveal]:not(.is-in)').forEach((el) => {
+        if (io && root.classList.contains('g-motion')) io.observe(el);
+        else el.classList.add('is-in');
+      });
+      scope.querySelectorAll('[data-g-tilt]').forEach(bindTilt);
+    };
+
+    const start = () => scan(document);
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
+    else start();
+    document.addEventListener('shopify:section:load', (event) => scan(event.target));
+  })();
+{% endjavascript %}

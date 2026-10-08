@@ -1,0 +1,172 @@
+{% render 'grinola-motion' %}
+
+<section class="g-scope g-steps{% if section.settings.compact %} g-steps--compact{% endif %}">
+  <div class="g-wrap g-steps__grid">
+    {%- if section.settings.heading != blank -%}
+      <div class="g-steps__head" data-g-reveal>
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="g-eyebrow">{{ section.settings.eyebrow }}</p>
+        {%- endif -%}
+        <h2 class="g-title g-steps__title">{{ section.settings.heading }}</h2>
+        {%- if section.settings.subheading != blank -%}
+          <p class="g-steps__sub">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    <ol class="g-steps__list{% unless section.settings.numbered %} g-steps__list--plain{% endunless %}" role="list">
+      {%- for block in section.blocks -%}
+        <li
+          class="g-steps__item"
+          data-g-reveal
+          style="--g-delay: {{ forloop.index0 | times: 110 }}ms"
+          {{ block.shopify_attributes }}
+        >
+          <span class="g-ring">{% render 'grinola-icon', name: block.settings.icon %}</span>
+          <div>
+            <h3 class="g-steps__item-title">
+              {%- if section.settings.numbered -%}
+                <span class="g-steps__num">{{ forloop.index }}</span>
+              {%- endif -%}
+              {{ block.settings.title }}
+            </h3>
+            <p class="g-steps__text">{{ block.settings.text }}</p>
+          </div>
+        </li>
+      {%- endfor -%}
+    </ol>
+  </div>
+</section>
+
+{% stylesheet %}
+  .g-steps {
+    padding-block: 48px;
+    border-bottom: 1px solid var(--g-line);
+  }
+  .g-steps--compact {
+    padding-block: 28px;
+    border-top: 1px solid var(--g-line);
+  }
+  .g-steps__grid {
+    display: grid;
+    gap: 28px;
+  }
+  .g-steps__title {
+    font-size: clamp(1.9rem, 5vw, 2.4rem);
+  }
+  .g-steps__sub {
+    margin: 8px 0 0;
+    color: var(--g-muted);
+  }
+  .g-steps__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .g-steps__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .g-steps__item-title {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 4px 0 4px;
+    font-family: var(--font-body--family);
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  .g-steps__num {
+    font-family: var(--font-heading--family);
+    font-size: 1.6rem;
+    line-height: 1;
+    color: var(--g-gold);
+  }
+  .g-steps__text {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--g-muted);
+  }
+  @media (min-width: 750px) {
+    .g-steps__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 990px) {
+    .g-steps__grid {
+      grid-template-columns: minmax(220px, 0.8fr) 3fr;
+      align-items: center;
+    }
+    .g-steps--compact .g-steps__grid {
+      grid-template-columns: 1fr;
+    }
+    .g-steps__list {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .g-steps__item + .g-steps__item {
+      border-left: 1px solid var(--g-line);
+      padding-left: 22px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "GRINOLA · Pasos",
+  "tag": "div",
+  "class": "g-section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Texto superior", "default": "Tu próxima pieza en 4 pasos" },
+    { "type": "text", "id": "heading", "label": "Título (vacío = solo iconos)", "default": "Cómo comprar" },
+    { "type": "text", "id": "subheading", "label": "Bajada" },
+    { "type": "checkbox", "id": "numbered", "label": "Numerar (solo si es una secuencia)", "default": true },
+    { "type": "checkbox", "id": "compact", "label": "Versión compacta (franja)", "default": false }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Elemento",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icono",
+          "options": [
+            { "value": "cart", "label": "Carrito" },
+            { "value": "card", "label": "Pago" },
+            { "value": "cube", "label": "Caja" },
+            { "value": "truck", "label": "Envío" },
+            { "value": "leaf", "label": "Hoja" },
+            { "value": "gear", "label": "Engranaje" },
+            { "value": "gem", "label": "Diamante" },
+            { "value": "star", "label": "Estrella" },
+            { "value": "shield", "label": "Escudo" },
+            { "value": "layers", "label": "Capas" },
+            { "value": "palette", "label": "Paleta" },
+            { "value": "chat", "label": "Mensaje" }
+          ],
+          "default": "cart"
+        },
+        { "type": "text", "id": "title", "label": "Título", "default": "Elige tu pieza" },
+        { "type": "text", "id": "text", "label": "Texto", "default": "Selecciona tamaño y color." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "GRINOLA · Cómo comprar",
+      "blocks": [
+        { "type": "item", "settings": { "icon": "cart", "title": "Elige tu pieza", "text": "Selecciona tamaño y color en la ficha." } },
+        { "type": "item", "settings": { "icon": "cube", "title": "Agrega al carrito", "text": "Revisa tu pedido cuando quieras." } },
+        { "type": "item", "settings": { "icon": "card", "title": "Finaliza tu pedido", "text": "Pago por transferencia con instrucciones claras." } },
+        { "type": "item", "settings": { "icon": "truck", "title": "Recibe tu pedido", "text": "Envíos dentro de Ecuador." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

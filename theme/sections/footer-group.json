@@ -1,0 +1,153 @@
+{
+ "type": "footer",
+ "name": "t:names.footer",
+ "sections": {
+  "footer_m9NzUG": {
+   "type": "footer",
+   "name": "t:names.footer",
+   "blocks": {
+    "brand": {
+     "type": "group",
+     "settings": {
+      "content_direction": "column",
+      "gap": 6,
+      "width": "fill",
+      "height": "fit"
+     },
+     "blocks": {
+      "t1": {
+       "type": "text",
+       "settings": {
+        "text": "<h2>GRINOLA</h2>",
+        "width": "100%",
+        "max_width": "normal",
+        "alignment": "left",
+        "type_preset": "h3"
+       },
+       "blocks": {}
+      },
+      "t2": {
+       "type": "text",
+       "settings": {
+        "text": "<p>Naturalmente diferente.</p>",
+        "width": "100%",
+        "max_width": "normal",
+        "alignment": "left",
+        "type_preset": "rte"
+       },
+       "blocks": {}
+      }
+     },
+     "block_order": [
+      "t1",
+      "t2"
+     ]
+    },
+    "ayuda": {
+     "type": "menu",
+     "settings": {
+      "menu": "grinola-ayuda"
+     },
+     "blocks": {}
+    },
+    "news": {
+     "type": "group",
+     "settings": {
+      "content_direction": "column",
+      "gap": 6,
+      "width": "fill",
+      "height": "fit"
+     },
+     "blocks": {
+      "t3": {
+       "type": "text",
+       "settings": {
+        "text": "<p>Recibe un correo cuando salga una nueva edición.</p>",
+        "width": "100%",
+        "max_width": "normal",
+        "alignment": "left",
+        "type_preset": "rte"
+       },
+       "blocks": {}
+      }
+     },
+     "block_order": [
+      "t3"
+     ]
+    },
+    "email_signup_crihX7": {
+     "type": "email-signup",
+     "settings": {
+      "width": "fill",
+      "custom_width": 100,
+      "border_style": "all",
+      "input_style": "custom",
+      "border_width": 1,
+      "border_radius": 100,
+      "input_background_color": "#161A15",
+      "input_text_color": "{{ settings.color_palette.color1 }}",
+      "input_border_color": "{{ settings.color_palette.color2 }}",
+      "style_class": "button-unstyled",
+      "display_type": "arrow",
+      "label": "Suscribirme",
+      "integrated_button": true
+     },
+     "blocks": {}
+    }
+   },
+   "block_order": [
+    "brand",
+    "ayuda",
+    "news",
+    "email_signup_crihX7"
+   ],
+   "settings": {
+    "section_width": "page-width",
+    "gap": 28,
+    "background_color": "#0D0F0C",
+    "padding-block-start": 48,
+    "padding-block-end": 32
+   }
+  },
+  "footer_utilities_jLGE8U": {
+   "type": "footer-utilities",
+   "name": "t:names.utilities",
+   "blocks": {
+    "footer_copyright_jweRK8": {
+     "type": "footer-copyright",
+     "settings": {
+      "show_powered_by": false,
+      "font_size": "0.75rem",
+      "case": "none"
+     },
+     "blocks": {}
+    },
+    "footer_policy_list_VCdnpa": {
+     "type": "footer-policy-list",
+     "settings": {
+      "font_size": "0.75rem",
+      "case": "none"
+     },
+     "blocks": {}
+    }
+   },
+   "block_order": [
+    "footer_copyright_jweRK8",
+    "footer_policy_list_VCdnpa"
+   ],
+   "settings": {
+    "section_width": "page-width",
+    "gap": 24,
+    "divider_thickness": 1,
+    "divider_color": "{{ settings.color_palette.color2 }}",
+    "background_color": "#0D0F0C",
+    "padding-block-start": 20,
+    "padding-block-end": 40
+   }
+  }
+ },
+ "order": [
+  "footer_m9NzUG",
+  "footer_utilities_jLGE8U"
+ ]
+}
