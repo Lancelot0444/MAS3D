@@ -2,3 +2,8 @@ config.php
 data/
 *.sqlite
 .DS_Store
+node_modules/
+.next/
+.env*.local
+manager/next-env.d.ts
+manager/tsconfig.tsbuildinfo
