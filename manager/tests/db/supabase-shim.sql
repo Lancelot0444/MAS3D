@@ -36,3 +36,5 @@ do $$ begin
     create publication supabase_realtime;
   end if;
 end $$;
+
+create table if not exists auth.mfa_factors (id uuid primary key default gen_random_uuid(), user_id uuid, status text, factor_type text default 'totp');

@@ -295,3 +295,18 @@ describe('Anulaciones e inmutabilidad', () => {
     expect(n(s)).toBe(n((await resumen()).caja_bancos));
   });
 });
+
+describe('Verificación en dos pasos', () => {
+  it('sin completar el segundo paso, un usuario con 2FA activo no ve datos', async () => {
+    await db.query("insert into auth.mfa_factors (user_id, status) values ($1, 'verified')", [conta.id]);
+    const sin = await como(db, conta, (q) => q('select count(*)::int n from public.clientes'));
+    expect(sin[0].n).toBe(0);
+    await db.query('begin');
+    await db.query("select set_config('request.jwt.claims', $1, true)", [JSON.stringify({ sub: conta.id, role: 'authenticated', aal: 'aal2' })]);
+    await db.query('set local role authenticated');
+    const con = (await db.query('select count(*)::int n from public.clientes')).rows[0].n;
+    await db.query('commit');
+    expect(con).toBeGreaterThan(0);
+    await db.query('delete from auth.mfa_factors where user_id = $1', [conta.id]);
+  });
+});
