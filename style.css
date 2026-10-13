@@ -475,3 +475,8 @@ textarea { resize: vertical; min-height: 60px; }
 
   .print-footer { font-size: 11px; color: #999; text-align: center; }
 }
+
+/* ===== Integración con la app MAS3D ===== */
+.btn-to-order { margin-top: 10px; border-color: var(--accent); color: var(--accent); }
+.btn-to-order:hover { border-color: var(--accent2); color: var(--text); background: rgba(124,58,237,0.15); }
+@media print { .m3-top { display: none !important; } }

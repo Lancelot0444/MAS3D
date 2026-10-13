@@ -199,6 +199,24 @@ function buildPrintArea() {
   $('p-total').textContent = $('r-total').textContent + ` (${qty} ud.)`;
 }
 
+/* ===== CONVERTIR COTIZACIÓN EN PEDIDO ===== */
+function goToOrder() {
+  calculate();
+  const { filamentKey, qty } = readInputs();
+  const parse = id => parseFloat($(id).textContent.replace(/[^0-9.\-]/g, '')) || 0;
+  const params = new URLSearchParams({
+    client:   $('q-client').value.trim(),
+    desc:     $('q-desc').value.trim(),
+    qty:      String(qty),
+    material: FILAMENTS[filamentKey].name,
+    color:    $('color').value.trim(),
+    price:    parse('r-total').toFixed(2),
+    cost:     parse('r-cost').toFixed(2),
+    notes:    $('q-notes').value.trim(),
+  });
+  window.location.href = 'pedido.php?' + params.toString();
+}
+
 /* ===== EVENT LISTENERS ===== */
 function initListeners() {
   /* Recalcular en cualquier cambio */
@@ -219,6 +237,10 @@ function initListeners() {
     buildPrintArea();
     window.print();
   });
+
+  /* Crear pedido (solo existe dentro de la app) */
+  const toOrder = $('btn-to-order');
+  if (toOrder) toOrder.addEventListener('click', goToOrder);
 }
 
 /* ===== INIT ===== */

@@ -1,0 +1,22 @@
+# MAS3D — Seguridad básica (Hostinger / Apache / LiteSpeed)
+Options -Indexes
+DirectoryIndex index.php
+
+# Forzar HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Bloquear archivos internos
+RewriteRule ^(app|apps-script|data)(/|$) - [F,L]
+RewriteRule (^|/)\.git - [F,L]
+<FilesMatch "^(config\.php|config\.sample\.php|.*\.md|.*\.sqlite|.*\.sql|\.gitignore)$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000"
+</IfModule>
+
+AddType application/manifest+json .webmanifest

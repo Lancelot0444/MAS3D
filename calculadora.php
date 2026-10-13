@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Calculadora de Cotización 3D</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="app">
+<?php
+declare(strict_types=1);
+require __DIR__ . '/app/bootstrap.php';
+require __DIR__ . '/app/layout.php';
+require_login();
+page_head('Cotizar', 'calculadora', ['style.css'], 'm3-calc');
+?>
+<div class="app">
     <header>
       <div class="header-inner">
         <div class="logo">
@@ -269,6 +267,7 @@
               <textarea id="q-notes" rows="2" placeholder="Fecha de entrega, instrucciones especiales…"></textarea>
             </div>
             <button class="btn-print" id="btn-print">🖨️ Imprimir / Guardar PDF</button>
+            <button class="btn-print btn-to-order" id="btn-to-order" type="button">📦 Crear pedido con esta cotización</button>
           </div>
 
         </aside>
@@ -291,7 +290,4 @@
       <p class="print-footer">Cotización generada con la calculadora MAS3D · Precios de filamento ARTILLERY — Promoción 3DTRONIX</p>
     </div>
   </div>
-
-  <script src="calculator.js"></script>
-</body>
-</html>
+<?php page_foot(['calculator.js']);
