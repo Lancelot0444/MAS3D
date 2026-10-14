@@ -10,6 +10,8 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  // Imagen mínima para Docker/Coolify: solo los archivos necesarios para ejecutar
+  output: 'standalone',
   experimental: { serverActions: { bodySizeLimit: '10mb' } },
   async headers() {
     return [{ source: '/(.*)', headers: securityHeaders }];

@@ -1,6 +1,8 @@
 # MAS3D Manager · Instalación, despliegue y respaldos
 
-Esta guía usa la **opción A** del plan: la app se publica en **Vercel**, los datos viven en **Supabase**, y tu dominio de **Hostinger** apunta a la app.
+> **¿Usas el VPS de Hostinger con Coolify?** Esa es la opción recomendada para MAS3D (sin pagar Vercel): sigue [`COOLIFY.md`](COOLIFY.md). De esta guía solo necesitas la sección 1 (Supabase), la 3 (primeros pasos) y la 4 (respaldos).
+
+Esta guía describe la alternativa con **Vercel**: la app se publica en Vercel, los datos viven en **Supabase**, y tu dominio de **Hostinger** apunta a la app.
 Todo se puede hacer desde un navegador (también desde el iPad). Tiempo estimado: unos 45 minutos.
 
 > Los nombres de menús de Supabase, Vercel y Google cambian con el tiempo. Si un botón no está exactamente donde dice la guía, búscalo con un nombre parecido.
@@ -125,9 +127,12 @@ export DATABASE_URL="postgresql://postgres.TU_REF:CLAVE@aws-0-us-east-1.pooler.s
 ```
 La cadena exacta está en **Project Settings → Database → Connection string → Session pooler**.
 
-Se generan dos archivos en `respaldos/`:
-- `mas3d-AAAA-MM-DD_HHMM.sql.gz`: los datos. Contienen información financiera y personal, así que **guárdalos cifrados o en un Drive privado de la empresa, nunca en GitHub**.
-- `…huella.txt`: totales de control, para verificar una restauración.
+Se generan tres archivos en `respaldos/`, con el mismo prefijo `mas3d-AAAA-MM-DD_HHMM`:
+- `…-datos.sql.gz`: clientes, pedidos y contabilidad.
+- `…-usuarios.sql.gz`: cuentas de acceso.
+- `…-huella.txt`: totales de control, para verificar una restauración.
+
+Contienen información financiera y personal, así que **guárdalos cifrados o en un Drive privado de la empresa, nunca sin cifrar en GitHub**. El respaldo nocturno automático ya los cifra (ver `COOLIFY.md` §7).
 
 ### 4.3 Restaurar (procedimiento probado)
 1. Crea un **proyecto nuevo** en Supabase. Nunca restaures encima del proyecto con problemas.
@@ -135,9 +140,9 @@ Se generan dos archivos en `respaldos/`:
 3. Restaura:
    ```bash
    export DATABASE_URL="postgresql://...proyecto-nuevo..."
-   ./scripts/restaurar.sh respaldos/mas3d-AAAA-MM-DD_HHMM.sql.gz
+   ./scripts/restaurar.sh respaldos/mas3d-AAAA-MM-DD_HHMM
    ```
-4. Compara los totales que se imprimen con el archivo `.huella.txt`: deben ser **idénticos**.
+4. Compara los totales que se imprimen con el archivo `-huella.txt`: deben ser **idénticos**.
 5. En Vercel, cambia las 3 variables de Supabase al proyecto nuevo y haz **Redeploy**.
 
 Este procedimiento se probó durante el desarrollo: respaldo, restauración en una base vacía y huellas idénticas (pedidos, asientos, sumas del debe y del haber, usuarios y auditoría).

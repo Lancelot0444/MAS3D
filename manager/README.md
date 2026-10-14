@@ -54,4 +54,6 @@ npm run build
 Las pruebas de base de datos usan un PostgreSQL 16 real (`TEST_DATABASE_URL`, por defecto `postgres://postgres@127.0.0.1:54329/postgres`):
 crean una base temporal, aplican las migraciones y verifican los escenarios contables y de permisos.
 
-**Instalación, despliegue, respaldos y claves:** ver [`docs/INSTALACION.md`](docs/INSTALACION.md).
+**Instalación:** en el VPS con Coolify → [`docs/COOLIFY.md`](docs/COOLIFY.md) (recomendado) · con Vercel → [`docs/INSTALACION.md`](docs/INSTALACION.md).
+
+**Respaldos:** nocturnos, cifrados y verificados automáticamente (`.github/workflows/manager-respaldo.yml`); scripts en `scripts/`.

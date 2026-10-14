@@ -1,0 +1,84 @@
+name: MAS3D Manager · respaldo nocturno
+
+# Cada noche (03:15 hora de Ecuador):
+#  1. Respalda los datos de Supabase.
+#  2. VERIFICA el respaldo restaurándolo en una base vacía y comparando los totales de control.
+#  3. Lo guarda CIFRADO (AES-256) como artefacto privado del repositorio durante 35 días.
+# Si algo falla, GitHub envía un correo a los administradores del repositorio.
+# El respaldo queda fuera del VPS y fuera de Supabase: una tercera ubicación independiente.
+
+on:
+  schedule:
+    - cron: '15 8 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  respaldo:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U postgres" --health-interval 5s --health-timeout 5s --health-retries 10
+    steps:
+      - name: Comprobar configuración
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+          RESPALDO_CLAVE: ${{ secrets.RESPALDO_CLAVE }}
+        run: |
+          if [ -z "$SUPABASE_DB_URL" ] || [ -z "$RESPALDO_CLAVE" ]; then
+            echo "::warning::Respaldo no configurado todavía (faltan SUPABASE_DB_URL o RESPALDO_CLAVE)."; echo "omitir=1" >> "$GITHUB_ENV"
+          fi
+      - uses: actions/checkout@v4
+        if: env.omitir != '1'
+      - name: Instalar cliente de PostgreSQL 17
+        if: env.omitir != '1'
+        run: |
+          sudo install -d /usr/share/postgresql-common/pgdg
+          sudo curl -fsSo /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc https://www.postgresql.org/media/keys/ACCC4CF8.asc
+          echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list
+          sudo apt-get update -qq && sudo apt-get install -y -qq postgresql-client-17
+          echo "/usr/lib/postgresql/17/bin" >> "$GITHUB_PATH"
+      - name: Respaldar
+        if: env.omitir != '1'
+        working-directory: manager
+        env:
+          DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: echo "BASE=$(DESTINO=$RUNNER_TEMP/respaldos ./scripts/respaldo.sh)" >> "$GITHUB_ENV"
+      - name: Verificar restaurando en una base vacía
+        if: env.omitir != '1'
+        working-directory: manager
+        env:
+          VERIF: postgres://postgres:postgres@localhost:5432/postgres
+        run: |
+          psql "$VERIF" -q -f tests/db/supabase-shim.sql
+          for f in supabase/migrations/*.sql; do psql "$VERIF" -q -v ON_ERROR_STOP=1 -f "$f" > /dev/null; done
+          SOLO_DATOS=1 DATABASE_URL="$VERIF" ./scripts/restaurar.sh "$BASE" > "$RUNNER_TEMP/huella-restaurada.txt"
+          if diff "$RUNNER_TEMP/huella-restaurada.txt" "$BASE-huella.txt"; then
+            echo "✅ Respaldo verificado: los totales coinciden"; cat "$BASE-huella.txt"
+          else
+            echo "::error::La restauración de prueba NO coincide con los datos de producción"; exit 1
+          fi
+      - name: Cifrar
+        if: env.omitir != '1'
+        env:
+          RESPALDO_CLAVE: ${{ secrets.RESPALDO_CLAVE }}
+        run: |
+          cd "$(dirname "$BASE")"
+          tar -cf respaldo.tar "$(basename "$BASE")"-*
+          gpg --batch --yes --symmetric --cipher-algo AES256 --passphrase "$RESPALDO_CLAVE" -o "$(basename "$BASE").tar.gpg" respaldo.tar
+          shred -u respaldo.tar "$(basename "$BASE")"-*.sql.gz
+          echo "ARCHIVO=$(dirname "$BASE")/$(basename "$BASE").tar.gpg" >> "$GITHUB_ENV"
+      - uses: actions/upload-artifact@v4
+        if: env.omitir != '1'
+        with:
+          name: respaldo-${{ github.run_number }}
+          path: ${{ env.ARCHIVO }}
+          retention-days: 35
+          if-no-files-found: error
