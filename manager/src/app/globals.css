@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@import "@fontsource-variable/montserrat";
+@import "@fontsource/fredoka/600.css";
+@import "@fontsource/fredoka/700.css";
+
+/* Colores oficiales tomados del logo de MAS3D */
+@theme {
+  --font-sans: "Montserrat Variable", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-marca: "Fredoka", "Montserrat Variable", sans-serif;
+
+  --color-tinta: #262221;        /* negro panda */
+  --color-tinta-2: #3d3634;
+  --color-tinta-3: #6b6260;
+  --color-crema: #fbf4ea;        /* marfil de la "M" */
+  --color-crema-2: #f5eadb;
+  --color-rubor: #f3c9bd;        /* mejillas del panda */
+  --color-oro-50: #fdf7ec;
+  --color-oro-100: #f8ead0;
+  --color-oro-200: #f0d6a7;
+  --color-oro-300: #edbb7c;      /* dorado claro */
+  --color-oro-400: #dba866;
+  --color-oro-500: #c99a55;      /* dorado principal */
+  --color-oro-600: #b38443;
+  --color-oro-700: #a57744;      /* dorado oscuro */
+  --color-oro-800: #7d5a30;
+  --color-oro-900: #5c4223;
+}
+
+:root {
+  color-scheme: light;
+  --sombra: 0 1px 2px rgb(38 34 33 / 0.06), 0 4px 16px rgb(38 34 33 / 0.06);
+}
+
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #fffdf9;
+  color: var(--color-tinta);
+  font-family: var(--font-sans);
+}
+
+@layer components {
+.titulo-marca { font-family: var(--font-marca); letter-spacing: -0.01em; }
+.dorado {
+  background: linear-gradient(180deg, var(--color-oro-300), var(--color-oro-500) 55%, var(--color-oro-700));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.tarjeta { background: white; border: 1px solid #efe6d8; border-radius: 1rem; box-shadow: var(--sombra); }
+.cifra { font-variant-numeric: tabular-nums; }
+
+/* Formularios cómodos en iPad/iPhone (16px evita el zoom automático) */
+.campo {
+  width: 100%; min-height: 44px; border-radius: 0.75rem; border: 1px solid #e3d8c7; background: white;
+  padding: 0.55rem 0.8rem; font-size: 16px; color: var(--color-tinta); outline: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+.campo:focus { border-color: var(--color-oro-500); box-shadow: 0 0 0 3px rgb(201 154 85 / 0.25); }
+.campo:disabled { background: #f7f2ea; color: var(--color-tinta-3); }
+select.campo { appearance: none; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%236b6260' stroke-width='1.6' fill='none'/></svg>"); background-repeat: no-repeat; background-position: right 0.8rem center; padding-right: 2.2rem; }
+.etiqueta { display: block; font-size: 0.8rem; font-weight: 600; color: var(--color-tinta-2); margin-bottom: 0.3rem; }
+
+}
+
+@media print {
+  .no-imprimir { display: none !important; }
+  body { background: white; }
+}
