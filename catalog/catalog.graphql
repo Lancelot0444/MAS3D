@@ -1,0 +1,14 @@
+mutation Catalog($p0: ProductSetInput!, $p1: ProductSetInput!, $p2: ProductSetInput!, $p3: ProductSetInput!, $p4: ProductSetInput!, $p5: ProductSetInput!, $p6: ProductSetInput!, $p7: ProductSetInput!, $p8: ProductSetInput!, $p9: ProductSetInput!, $p10: ProductSetInput!, $p11: ProductSetInput!) {
+p0: productSet(synchronous: true, input: $p0) { product { id handle status } userErrors { field message code } }
+p1: productSet(synchronous: true, input: $p1) { product { id handle status } userErrors { field message code } }
+p2: productSet(synchronous: true, input: $p2) { product { id handle status } userErrors { field message code } }
+p3: productSet(synchronous: true, input: $p3) { product { id handle status } userErrors { field message code } }
+p4: productSet(synchronous: true, input: $p4) { product { id handle status } userErrors { field message code } }
+p5: productSet(synchronous: true, input: $p5) { product { id handle status } userErrors { field message code } }
+p6: productSet(synchronous: true, input: $p6) { product { id handle status } userErrors { field message code } }
+p7: productSet(synchronous: true, input: $p7) { product { id handle status } userErrors { field message code } }
+p8: productSet(synchronous: true, input: $p8) { product { id handle status } userErrors { field message code } }
+p9: productSet(synchronous: true, input: $p9) { product { id handle status } userErrors { field message code } }
+p10: productSet(synchronous: true, input: $p10) { product { id handle status } userErrors { field message code } }
+p11: productSet(synchronous: true, input: $p11) { product { id handle status } userErrors { field message code } }
+}

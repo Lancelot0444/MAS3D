@@ -1,0 +1,1038 @@
+{
+ "p0": {
+  "title": "Fantasy Fruit Purple",
+  "handle": "fantasy-fruit-purple",
+  "descriptionHtml": "<p>Grinder de colección con forma de fruta fantástica y relieve en espiral.</p><p>Se abre en tres piezas: tapa con dientes, rejilla y base. Impreso en 3D en PLA.</p><p><strong>Edición limitada · fabricación bajo pedido.</strong></p>",
+  "vendor": "GRINOLA",
+  "productType": "Grinder",
+  "status": "ACTIVE",
+  "tags": [
+   "limited",
+   "fantasy",
+   "grinder",
+   "bajo-pedido"
+  ],
+  "productOptions": [
+   {
+    "name": "Tamaño",
+    "position": 1,
+    "values": [
+     {
+      "name": "Pequeño"
+     },
+     {
+      "name": "Grande"
+     }
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "optionValues": [
+     {
+      "optionName": "Tamaño",
+      "name": "Pequeño"
+     }
+    ],
+    "price": "15.00",
+    "sku": "GRN-FFP-P",
+    "inventoryPolicy": "CONTINUE",
+    "inventoryItem": {
+     "tracked": false,
+     "requiresShipping": true
+    }
+   },
+   {
+    "optionValues": [
+     {
+      "optionName": "Tamaño",
+      "name": "Grande"
+     }
+    ],
+    "price": "25.00",
+    "sku": "GRN-FFP-G",
+    "inventoryPolicy": "CONTINUE",
+    "inventoryItem": {
+     "tracked": false,
+     "requiresShipping": true
+    }
+   }
+  ],
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "material",
+    "type": "single_line_text_field",
+    "value": "PLA"
+   },
+   {
+    "namespace": "custom",
+    "key": "linea",
+    "type": "single_line_text_field",
+    "value": "Limited"
+   },
+   {
+    "namespace": "custom",
+    "key": "caracteristicas",
+    "type": "list.single_line_text_field",
+    "value": "[\"Grinder funcional de 3 piezas\", \"Relieve escultórico en espiral\", \"Impreso en 3D en PLA\", \"Disponible en tamaño pequeño y grande\"]"
+   }
+  ],
+  "seo": {
+   "title": "Fantasy Fruit Purple | GRINOLA",
+   "description": "Grinder funcional de 3 piezas. Edición limitada de GRINOLA, impresa en 3D en Ecuador."
+  },
+  "files": [
+   {
+    "id": "gid://shopify/MediaImage/46075352744041"
+   },
+   {
+    "id": "gid://shopify/MediaImage/46075352678505"
+   }
+  ]
+ },
+ "p1": {
+  "title": "Fantasy Fruit Orange",
+  "handle": "fantasy-fruit-orange",
+  "descriptionHtml": "<p>Grinder de colección con forma de fruta fantástica y relieve de llamas.</p><p>Se abre en tres piezas: tapa, rejilla y base. Impreso en 3D en PLA.</p><p><strong>Edición limitada · fabricación bajo pedido.</strong></p>",
+  "vendor": "GRINOLA",
+  "productType": "Grinder",
+  "status": "ACTIVE",
+  "tags": [
+   "limited",
+   "fantasy",
+   "grinder",
+   "bajo-pedido"
+  ],
+  "productOptions": [
+   {
+    "name": "Tamaño",
+    "position": 1,
+    "values": [
+     {
+      "name": "Pequeño"
+     },
+     {
+      "name": "Grande"
+     }
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "optionValues": [
+     {
+      "optionName": "Tamaño",
+      "name": "Pequeño"
+     }
+    ],
+    "price": "15.00",
+    "sku": "GRN-FFO-P",
+    "inventoryPolicy": "CONTINUE",
+    "inventoryItem": {
+     "tracked": false,
+     "requiresShipping": true
+    }
+   },
+   {
+    "optionValues": [
+     {
+      "optionName": "Tamaño",
+      "name": "Grande"
+     }
+    ],
+    "price": "25.00",
+    "sku": "GRN-FFO-G",
+    "inventoryPolicy": "CONTINUE",
+    "inventoryItem": {
+     "tracked": false,
+     "requiresShipping": true
+    }
+   }
+  ],
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "material",
+    "type": "single_line_text_field",
+    "value": "PLA"
+   },
+   {
+    "namespace": "custom",
+    "key": "linea",
+    "type": "single_line_text_field",
+    "value": "Limited"
+   },
+   {
+    "namespace": "custom",
+    "key": "caracteristicas",
+    "type": "list.single_line_text_field",
+    "value": "[\"Grinder funcional de 3 piezas\", \"Relieve escultórico de llamas\", \"Impreso en 3D en PLA\", \"Disponible en tamaño pequeño y grande\"]"
+   }
+  ],
+  "seo": {
+   "title": "Fantasy Fruit Orange | GRINOLA",
+   "description": "Grinder funcional de 3 piezas. Edición limitada de GRINOLA, impresa en 3D en Ecuador."
+  },
+  "files": [
+   {
+    "id": "gid://shopify/MediaImage/46075352776809"
+   }
+  ]
+ },
+ "p2": {
+  "title": "Cupcake Sweet Grinder",
+  "handle": "cupcake-sweet-grinder",
+  "descriptionHtml": "<p>Grinder con forma de cupcake. La crema es la tapa con dientes y el pirotín es la base.</p><p>Impreso en 3D en PLA.</p><p><strong>Edición limitada · fabricación bajo pedido.</strong></p>",
+  "vendor": "GRINOLA",
+  "productType": "Grinder",
+  "status": "ACTIVE",
+  "tags": [
+   "limited",
+   "sweet",
+   "grinder",
+   "bajo-pedido"
+  ],
+  "productOptions": [
+   {
+    "name": "Tamaño",
+    "position": 1,
+    "values": [
+     {
+      "name": "Pequeño"
+     },
+     {
+      "name": "Grande"
+     }
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "optionValues": [
+     {
+      "optionName": "Tamaño",
+      "name": "Pequeño"
+     }
+    ],
+    "price": "15.00",
+    "sku": "GRN-CSG-P",
+    "inventoryPolicy": "CONTINUE",
+    "inventoryItem": {
+     "tracked": false,
+     "requiresShipping": true
+    }
+   },
+   {
+    "optionValues": [
+     {
+      "optionName": "Tamaño",
+      "name": "Grande"
+     }
+    ],
+    "price": "25.00",
+    "sku": "GRN-CSG-G",
+    "inventoryPolicy": "CONTINUE",
+    "inventoryItem": {
+     "tracked": false,
+     "requiresShipping": true
+    }
+   }
+  ],
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "material",
+    "type": "single_line_text_field",
+    "value": "PLA"
+   },
+   {
+    "namespace": "custom",
+    "key": "linea",
+    "type": "single_line_text_field",
+    "value": "Limited"
+   },
+   {
+    "namespace": "custom",
+    "key": "caracteristicas",
+    "type": "list.single_line_text_field",
+    "value": "[\"Tapa con dientes integrada\", \"Diseño dulce y coleccionable\", \"Impreso en 3D en PLA\", \"Disponible en tamaño pequeño y grande\"]"
+   }
+  ],
+  "seo": {
+   "title": "Cupcake Sweet Grinder | GRINOLA",
+   "description": "Tapa con dientes integrada. Edición limitada de GRINOLA, impresa en 3D en Ecuador."
+  },
+  "files": [
+   {
+    "id": "gid://shopify/MediaImage/46075352711273"
+   }
+  ]
+ },
+ "p3": {
+  "title": "Samurai Green Edition",
+  "handle": "samurai-green-edition",
+  "descriptionHtml": "<p>Grinder de colección con forma de cabeza de samurái de cabello verde, esculpido en alto detalle.</p><p>Incluye piezas de molienda internas. Impreso en 3D en PLA.</p><p><strong>Edición limitada · fabricación bajo pedido.</strong></p>",
+  "vendor": "GRINOLA",
+  "productType": "Grinder",
+  "status": "ACTIVE",
+  "tags": [
+   "limited",
+   "anime",
+   "grinder",
+   "bajo-pedido"
+  ],
+  "productOptions": [
+   {
+    "name": "Tamaño",
+    "position": 1,
+    "values": [
+     {
+      "name": "Pequeño"
+     },
+     {
+      "name": "Grande"
+     }
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "optionValues": [
+     {
+      "optionName": "Tamaño",
+      "name": "Pequeño"
+     }
+    ],
+    "price": "15.00",
+    "sku": "GRN-SGE-P",
+    "inventoryPolicy": "CONTINUE",
+    "inventoryItem": {
+     "tracked": false,
+     "requiresShipping": true
+    }
+   },
+   {
+    "optionValues": [
+     {
+      "optionName": "Tamaño",
+      "name": "Grande"
+     }
+    ],
+    "price": "25.00",
+    "sku": "GRN-SGE-G",
+    "inventoryPolicy": "CONTINUE",
+    "inventoryItem": {
+     "tracked": false,
+     "requiresShipping": true
+    }
+   }
+  ],
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "material",
+    "type": "single_line_text_field",
+    "value": "PLA"
+   },
+   {
+    "namespace": "custom",
+    "key": "linea",
+    "type": "single_line_text_field",
+    "value": "Limited"
+   },
+   {
+    "namespace": "custom",
+    "key": "caracteristicas",
+    "type": "list.single_line_text_field",
+    "value": "[\"Esculpido temático de alto detalle\", \"Piezas de molienda integradas\", \"Impreso en 3D en PLA\", \"Disponible en tamaño pequeño y grande\"]"
+   }
+  ],
+  "seo": {
+   "title": "Samurai Green Edition | GRINOLA",
+   "description": "Esculpido temático de alto detalle. Edición limitada de GRINOLA, impresa en 3D en Ecuador."
+  },
+  "files": [
+   {
+    "id": "gid://shopify/MediaImage/46075352842345"
+   }
+  ]
+ },
+ "p4": {
+  "title": "Shadow Ninja Edition",
+  "handle": "shadow-ninja-edition",
+  "descriptionHtml": "<p>Grinder de colección con forma de cabeza de ninja, con bandana y máscara.</p><p>Sistema de molienda integrado. Impreso en 3D en PLA.</p><p><strong>Edición limitada · fabricación bajo pedido.</strong></p>",
+  "vendor": "GRINOLA",
+  "productType": "Grinder",
+  "status": "ACTIVE",
+  "tags": [
+   "limited",
+   "anime",
+   "grinder",
+   "bajo-pedido"
+  ],
+  "productOptions": [
+   {
+    "name": "Tamaño",
+    "position": 1,
+    "values": [
+     {
+      "name": "Pequeño"
+     },
+     {
+      "name": "Grande"
+     }
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "optionValues": [
+     {
+      "optionName": "Tamaño",
+      "name": "Pequeño"
+     }
+    ],
+    "price": "15.00",
+    "sku": "GRN-SNE-P",
+    "inventoryPolicy": "CONTINUE",
+    "inventoryItem": {
+     "tracked": false,
+     "requiresShipping": true
+    }
+   },
+   {
+    "optionValues": [
+     {
+      "optionName": "Tamaño",
+      "name": "Grande"
+     }
+    ],
+    "price": "25.00",
+    "sku": "GRN-SNE-G",
+    "inventoryPolicy": "CONTINUE",
+    "inventoryItem": {
+     "tracked": false,
+     "requiresShipping": true
+    }
+   }
+  ],
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "material",
+    "type": "single_line_text_field",
+    "value": "PLA"
+   },
+   {
+    "namespace": "custom",
+    "key": "linea",
+    "type": "single_line_text_field",
+    "value": "Limited"
+   },
+   {
+    "namespace": "custom",
+    "key": "caracteristicas",
+    "type": "list.single_line_text_field",
+    "value": "[\"Sistema de molienda integrado\", \"Formato compacto de colección\", \"Impreso en 3D en PLA\", \"Disponible en tamaño pequeño y grande\"]"
+   }
+  ],
+  "seo": {
+   "title": "Shadow Ninja Edition | GRINOLA",
+   "description": "Sistema de molienda integrado. Edición limitada de GRINOLA, impresa en 3D en Ecuador."
+  },
+  "files": [
+   {
+    "id": "gid://shopify/MediaImage/46075352875113"
+   }
+  ]
+ },
+ "p5": {
+  "title": "Chibi Blush Edition",
+  "handle": "chibi-blush-edition",
+  "descriptionHtml": "<p>Grinder de colección con forma de personaje chibi de cabello blanco y mejillas rojas.</p><p>El cabello es la tapa y en el interior lleva la pieza de molienda. Impreso en 3D en PLA.</p><p><strong>Edición limitada · fabricación bajo pedido.</strong></p>",
+  "vendor": "GRINOLA",
+  "productType": "Grinder",
+  "status": "ACTIVE",
+  "tags": [
+   "limited",
+   "anime",
+   "grinder",
+   "bajo-pedido"
+  ],
+  "productOptions": [
+   {
+    "name": "Tamaño",
+    "position": 1,
+    "values": [
+     {
+      "name": "Pequeño"
+     },
+     {
+      "name": "Grande"
+     }
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "optionValues": [
+     {
+      "optionName": "Tamaño",
+      "name": "Pequeño"
+     }
+    ],
+    "price": "15.00",
+    "sku": "GRN-CBE-P",
+    "inventoryPolicy": "CONTINUE",
+    "inventoryItem": {
+     "tracked": false,
+     "requiresShipping": true
+    }
+   },
+   {
+    "optionValues": [
+     {
+      "optionName": "Tamaño",
+      "name": "Grande"
+     }
+    ],
+    "price": "25.00",
+    "sku": "GRN-CBE-G",
+    "inventoryPolicy": "CONTINUE",
+    "inventoryItem": {
+     "tracked": false,
+     "requiresShipping": true
+    }
+   }
+  ],
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "material",
+    "type": "single_line_text_field",
+    "value": "PLA"
+   },
+   {
+    "namespace": "custom",
+    "key": "linea",
+    "type": "single_line_text_field",
+    "value": "Limited"
+   },
+   {
+    "namespace": "custom",
+    "key": "caracteristicas",
+    "type": "list.single_line_text_field",
+    "value": "[\"Diseño tierno y coleccionable\", \"Pieza de molienda interna\", \"Impreso en 3D en PLA\", \"Disponible en tamaño pequeño y grande\"]"
+   }
+  ],
+  "seo": {
+   "title": "Chibi Blush Edition | GRINOLA",
+   "description": "Diseño tierno y coleccionable. Edición limitada de GRINOLA, impresa en 3D en Ecuador."
+  },
+  "files": [
+   {
+    "originalSource": "https://raw.githubusercontent.com/Lancelot0444/MAS3D/cba5fc6fffaf98c4f393b06867cded55e24a3d95/theme-assets/grinola-anime-chibi.jpg",
+    "contentType": "IMAGE",
+    "alt": "Chibi Blush Edition de GRINOLA abierto con pieza de molienda"
+   }
+  ]
+ },
+ "p6": {
+  "title": "Skull Flame Case",
+  "handle": "skull-flame-case",
+  "descriptionHtml": "<p>Funda escultórica para encendedor con calavera en alto relieve y acabado mate.</p><p>Impresa en 3D en PLA. Elige tu color.</p>",
+  "vendor": "GRINOLA",
+  "productType": "Funda para encendedor",
+  "status": "ACTIVE",
+  "tags": [
+   "core",
+   "estuche"
+  ],
+  "productOptions": [
+   {
+    "name": "Color",
+    "position": 1,
+    "values": [
+     {
+      "name": "Negro"
+     },
+     {
+      "name": "Marfil"
+     },
+     {
+      "name": "Gris"
+     },
+     {
+      "name": "Azul"
+     },
+     {
+      "name": "Rojo"
+     }
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "optionValues": [
+     {
+      "optionName": "Color",
+      "name": "Negro"
+     }
+    ],
+    "price": "15.00",
+    "sku": "GRN-SFC-NEG",
+    "inventoryPolicy": "CONTINUE",
+    "inventoryItem": {
+     "tracked": false,
+     "requiresShipping": true
+    }
+   },
+   {
+    "optionValues": [
+     {
+      "optionName": "Color",
+      "name": "Marfil"
+     }
+    ],
+    "price": "15.00",
+    "sku": "GRN-SFC-MAR",
+    "inventoryPolicy": "CONTINUE",
+    "inventoryItem": {
+     "tracked": false,
+     "requiresShipping": true
+    }
+   },
+   {
+    "optionValues": [
+     {
+      "optionName": "Color",
+      "name": "Gris"
+     }
+    ],
+    "price": "15.00",
+    "sku": "GRN-SFC-GRI",
+    "inventoryPolicy": "CONTINUE",
+    "inventoryItem": {
+     "tracked": false,
+     "requiresShipping": true
+    }
+   },
+   {
+    "optionValues": [
+     {
+      "optionName": "Color",
+      "name": "Azul"
+     }
+    ],
+    "price": "15.00",
+    "sku": "GRN-SFC-AZU",
+    "inventoryPolicy": "CONTINUE",
+    "inventoryItem": {
+     "tracked": false,
+     "requiresShipping": true
+    }
+   },
+   {
+    "optionValues": [
+     {
+      "optionName": "Color",
+      "name": "Rojo"
+     }
+    ],
+    "price": "15.00",
+    "sku": "GRN-SFC-ROJ",
+    "inventoryPolicy": "CONTINUE",
+    "inventoryItem": {
+     "tracked": false,
+     "requiresShipping": true
+    }
+   }
+  ],
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "material",
+    "type": "single_line_text_field",
+    "value": "PLA"
+   },
+   {
+    "namespace": "custom",
+    "key": "linea",
+    "type": "single_line_text_field",
+    "value": "Core"
+   },
+   {
+    "namespace": "custom",
+    "key": "caracteristicas",
+    "type": "list.single_line_text_field",
+    "value": "[\"Escultura de alto relieve\", \"Acabado mate\", \"Impresa en 3D en PLA\", \"Disponible en varios colores\"]"
+   }
+  ],
+  "seo": {
+   "title": "Skull Flame Case | GRINOLA",
+   "description": "Escultura de alto relieve. GRINOLA Core, impreso en 3D en Ecuador."
+  },
+  "files": [
+   {
+    "id": "gid://shopify/MediaImage/46075352907881"
+   }
+  ]
+ },
+ "p7": {
+  "title": "Grinder Classic",
+  "handle": "grinder-classic",
+  "descriptionHtml": "<p>Grinder cilíndrico de GRINOLA con la hoja de la marca grabada en la tapa. Impreso en 3D en PLA.</p>",
+  "vendor": "GRINOLA",
+  "productType": "Grinder",
+  "status": "DRAFT",
+  "tags": [
+   "core",
+   "grinder"
+  ],
+  "productOptions": [
+   {
+    "name": "Tamaño",
+    "position": 1,
+    "values": [
+     {
+      "name": "Pequeño"
+     },
+     {
+      "name": "Grande"
+     }
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "optionValues": [
+     {
+      "optionName": "Tamaño",
+      "name": "Pequeño"
+     }
+    ],
+    "price": "15.00",
+    "sku": "GRN-GCL-P",
+    "inventoryPolicy": "CONTINUE",
+    "inventoryItem": {
+     "tracked": false,
+     "requiresShipping": true
+    }
+   },
+   {
+    "optionValues": [
+     {
+      "optionName": "Tamaño",
+      "name": "Grande"
+     }
+    ],
+    "price": "25.00",
+    "sku": "GRN-GCL-G",
+    "inventoryPolicy": "CONTINUE",
+    "inventoryItem": {
+     "tracked": false,
+     "requiresShipping": true
+    }
+   }
+  ],
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "material",
+    "type": "single_line_text_field",
+    "value": "PLA"
+   },
+   {
+    "namespace": "custom",
+    "key": "linea",
+    "type": "single_line_text_field",
+    "value": "Core"
+   },
+   {
+    "namespace": "custom",
+    "key": "caracteristicas",
+    "type": "list.single_line_text_field",
+    "value": "[\"Hoja GRINOLA grabada\", \"Impreso en 3D en PLA\"]"
+   }
+  ],
+  "seo": {
+   "title": "Grinder Classic | GRINOLA",
+   "description": "Hoja GRINOLA grabada. GRINOLA Core, impreso en 3D en Ecuador."
+  }
+ },
+ "p8": {
+  "title": "Grinder Sphere",
+  "handle": "grinder-sphere",
+  "descriptionHtml": "<p>Grinder esférico de GRINOLA. Impreso en 3D en PLA.</p>",
+  "vendor": "GRINOLA",
+  "productType": "Grinder",
+  "status": "DRAFT",
+  "tags": [
+   "core",
+   "grinder"
+  ],
+  "productOptions": [
+   {
+    "name": "Tamaño",
+    "position": 1,
+    "values": [
+     {
+      "name": "Pequeño"
+     },
+     {
+      "name": "Grande"
+     }
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "optionValues": [
+     {
+      "optionName": "Tamaño",
+      "name": "Pequeño"
+     }
+    ],
+    "price": "15.00",
+    "sku": "GRN-GSP-P",
+    "inventoryPolicy": "CONTINUE",
+    "inventoryItem": {
+     "tracked": false,
+     "requiresShipping": true
+    }
+   },
+   {
+    "optionValues": [
+     {
+      "optionName": "Tamaño",
+      "name": "Grande"
+     }
+    ],
+    "price": "25.00",
+    "sku": "GRN-GSP-G",
+    "inventoryPolicy": "CONTINUE",
+    "inventoryItem": {
+     "tracked": false,
+     "requiresShipping": true
+    }
+   }
+  ],
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "material",
+    "type": "single_line_text_field",
+    "value": "PLA"
+   },
+   {
+    "namespace": "custom",
+    "key": "linea",
+    "type": "single_line_text_field",
+    "value": "Core"
+   },
+   {
+    "namespace": "custom",
+    "key": "caracteristicas",
+    "type": "list.single_line_text_field",
+    "value": "[\"Formato esférico\", \"Impreso en 3D en PLA\"]"
+   }
+  ],
+  "seo": {
+   "title": "Grinder Sphere | GRINOLA",
+   "description": "Formato esférico. GRINOLA Core, impreso en 3D en Ecuador."
+  }
+ },
+ "p9": {
+  "title": "Pocket Case",
+  "handle": "pocket-case",
+  "descriptionHtml": "<p>Estuche de bolsillo con tapa abatible. Impreso en 3D en PLA.</p>",
+  "vendor": "GRINOLA",
+  "productType": "Estuche",
+  "status": "DRAFT",
+  "tags": [
+   "core",
+   "estuche"
+  ],
+  "productOptions": [
+   {
+    "name": "Title",
+    "position": 1,
+    "values": [
+     {
+      "name": "Default Title"
+     }
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "optionValues": [
+     {
+      "optionName": "Title",
+      "name": "Default Title"
+     }
+    ],
+    "price": "15.00",
+    "sku": "GRN-PCK",
+    "inventoryPolicy": "CONTINUE",
+    "inventoryItem": {
+     "tracked": false,
+     "requiresShipping": true
+    }
+   }
+  ],
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "material",
+    "type": "single_line_text_field",
+    "value": "PLA"
+   },
+   {
+    "namespace": "custom",
+    "key": "linea",
+    "type": "single_line_text_field",
+    "value": "Core"
+   },
+   {
+    "namespace": "custom",
+    "key": "caracteristicas",
+    "type": "list.single_line_text_field",
+    "value": "[\"Tapa abatible\", \"Impreso en 3D en PLA\"]"
+   }
+  ],
+  "seo": {
+   "title": "Pocket Case | GRINOLA",
+   "description": "Tapa abatible. GRINOLA Core, impreso en 3D en Ecuador."
+  }
+ },
+ "p10": {
+  "title": "Celtic Pocket Case",
+  "handle": "celtic-pocket-case",
+  "descriptionHtml": "<p>Estuche de bolsillo con nudo celta en relieve. Impreso en 3D en PLA.</p>",
+  "vendor": "GRINOLA",
+  "productType": "Estuche",
+  "status": "DRAFT",
+  "tags": [
+   "core",
+   "estuche"
+  ],
+  "productOptions": [
+   {
+    "name": "Title",
+    "position": 1,
+    "values": [
+     {
+      "name": "Default Title"
+     }
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "optionValues": [
+     {
+      "optionName": "Title",
+      "name": "Default Title"
+     }
+    ],
+    "price": "15.00",
+    "sku": "GRN-CPC",
+    "inventoryPolicy": "CONTINUE",
+    "inventoryItem": {
+     "tracked": false,
+     "requiresShipping": true
+    }
+   }
+  ],
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "material",
+    "type": "single_line_text_field",
+    "value": "PLA"
+   },
+   {
+    "namespace": "custom",
+    "key": "linea",
+    "type": "single_line_text_field",
+    "value": "Core"
+   },
+   {
+    "namespace": "custom",
+    "key": "caracteristicas",
+    "type": "list.single_line_text_field",
+    "value": "[\"Nudo celta en relieve\", \"Impreso en 3D en PLA\"]"
+   }
+  ],
+  "seo": {
+   "title": "Celtic Pocket Case | GRINOLA",
+   "description": "Nudo celta en relieve. GRINOLA Core, impreso en 3D en Ecuador."
+  }
+ },
+ "p11": {
+  "title": "Rolling Station",
+  "handle": "rolling-station",
+  "descriptionHtml": "<p>Estación modular con compartimentos integrados y bandeja deslizante. Impresa en 3D en PLA.</p>",
+  "vendor": "GRINOLA",
+  "productType": "Estación",
+  "status": "DRAFT",
+  "tags": [
+   "core",
+   "estacion"
+  ],
+  "productOptions": [
+   {
+    "name": "Title",
+    "position": 1,
+    "values": [
+     {
+      "name": "Default Title"
+     }
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "optionValues": [
+     {
+      "optionName": "Title",
+      "name": "Default Title"
+     }
+    ],
+    "price": "15.00",
+    "sku": "GRN-RST",
+    "inventoryPolicy": "CONTINUE",
+    "inventoryItem": {
+     "tracked": false,
+     "requiresShipping": true
+    }
+   }
+  ],
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "material",
+    "type": "single_line_text_field",
+    "value": "PLA"
+   },
+   {
+    "namespace": "custom",
+    "key": "linea",
+    "type": "single_line_text_field",
+    "value": "Core"
+   },
+   {
+    "namespace": "custom",
+    "key": "caracteristicas",
+    "type": "list.single_line_text_field",
+    "value": "[\"Diseño modular\", \"Bandeja deslizante\", \"Compartimentos integrados\", \"Impresa en 3D en PLA\"]"
+   }
+  ],
+  "seo": {
+   "title": "Rolling Station | GRINOLA",
+   "description": "Diseño modular. GRINOLA Core, impreso en 3D en Ecuador."
+  }
+ }
+}

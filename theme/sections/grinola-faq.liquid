@@ -1,0 +1,181 @@
+{% render 'grinola-motion' %}
+
+<section class="g-scope g-faq">
+  <div class="g-wrap g-faq__grid">
+    <div data-g-reveal>
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="g-eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      <h2 class="g-title g-faq__title">{{ section.settings.heading }}</h2>
+      {%- if section.settings.link_label != blank -%}
+        <a class="g-link g-faq__more" href="{{ section.settings.link_url | default: routes.root_url }}">
+          {{- section.settings.link_label -}}
+          {% render 'grinola-icon', name: 'arrow' %}
+        </a>
+      {%- endif -%}
+    </div>
+    <div class="g-faq__list">
+      {%- for block in section.blocks -%}
+        <details
+          class="g-faq__item"
+          data-g-reveal
+          style="--g-delay: {{ forloop.index0 | times: 80 }}ms"
+          {{ block.shopify_attributes }}
+        >
+          <summary class="g-faq__q">
+            <span>{{ block.settings.question }}</span>
+            <svg class="g-faq__caret" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </summary>
+          <div class="g-faq__a">{{ block.settings.answer }}</div>
+        </details>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+  .g-faq {
+    padding-block: 52px;
+  }
+  .g-faq__grid {
+    display: grid;
+    gap: 24px;
+  }
+  .g-faq__title {
+    font-size: clamp(2rem, 6vw, 2.8rem);
+  }
+  .g-faq__more {
+    margin-top: 18px;
+  }
+  .g-faq__list {
+    display: grid;
+    gap: 0;
+  }
+  .g-faq__item {
+    border-bottom: 1px solid var(--g-line);
+  }
+  .g-faq__q {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 56px;
+    padding-block: 14px;
+    cursor: pointer;
+    list-style: none;
+    font-size: 0.98rem;
+    font-weight: 500;
+  }
+  .g-faq__q::-webkit-details-marker {
+    display: none;
+  }
+  .g-faq__q:focus-visible {
+    outline: 2px solid var(--g-gold);
+    outline-offset: 2px;
+  }
+  .g-faq__caret {
+    flex: none;
+    width: 20px;
+    height: 20px;
+    color: var(--g-gold);
+    transition: transform 0.35s var(--g-ease);
+  }
+  .g-faq__item[open] .g-faq__caret {
+    transform: rotate(180deg);
+  }
+  .g-faq__a {
+    padding-bottom: 18px;
+    color: var(--g-muted);
+    font-size: 0.92rem;
+    line-height: 1.65;
+    animation: g-faq-open 0.45s var(--g-ease);
+  }
+  .g-faq__a p {
+    margin: 0;
+  }
+  @keyframes g-faq-open {
+    from {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @media (min-width: 990px) {
+    .g-faq__grid {
+      grid-template-columns: minmax(220px, 0.8fr) 3fr;
+      gap: 56px;
+    }
+    .g-faq__list {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 40px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .g-faq__a {
+      animation: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "GRINOLA · Preguntas",
+  "tag": "div",
+  "class": "g-section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Texto superior", "default": "Preguntas frecuentes" },
+    { "type": "text", "id": "heading", "label": "Título", "default": "FAQ" },
+    { "type": "text", "id": "link_label", "label": "Enlace", "default": "Ver todas las preguntas" },
+    { "type": "url", "id": "link_url", "label": "Destino del enlace" }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Pregunta",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Pregunta", "default": "¿Cómo compro?" },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Respuesta",
+          "default": "<p>Elige el producto, selecciona tamaño y color, agrégalo al carrito y finaliza tu pedido.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "GRINOLA · Preguntas",
+      "blocks": [
+        { "type": "question" },
+        {
+          "type": "question",
+          "settings": {
+            "question": "¿Qué métodos de pago aceptan?",
+            "answer": "<p>Por ahora, transferencia bancaria. Al finalizar el pedido verás los datos y cómo enviar tu comprobante.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "¿De qué material son?",
+            "answer": "<p>Imprimimos en PLA. Cada ficha indica medidas y peso.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "¿Hacen envíos?",
+            "answer": "<p>Enviamos dentro de Ecuador. El costo se calcula al finalizar el pedido.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
