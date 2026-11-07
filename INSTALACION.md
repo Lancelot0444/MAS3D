@@ -98,6 +98,10 @@ En la carpeta `.claude/skills/` están las skills oficiales de Anthropic (PDF, E
 pruebas). Abre PowerShell en la carpeta del proyecto y escribe `claude`: las skills y la guía `CLAUDE.md`
 se cargan solas. Detalle en `.claude/skills/README.md`.
 
+También está **REA (Reverse Engineer Anything)**, de github.com/morluto/rea. Sirve para que Claude estudie cómo funciona
+por dentro un programa, una app o una web (por ejemplo un slicer o la tienda de un competidor) y te explique
+lo que encontró. `instalar-pc.ps1` lo instala y lo conecta a Claude Code; para revisarlo usa `rea doctor`.
+
 ---
 
 ## Cómo se usa

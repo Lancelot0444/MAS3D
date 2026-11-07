@@ -1,6 +1,6 @@
 ﻿# MAS3D - Preparar una PC con Windows 10/11
 # Instala: PHP (para la app), Git, Python, Node.js, LibreOffice, Pandoc,
-# Claude Code y las dependencias de las skills de .claude/skills.
+# Claude Code, REA y las dependencias de las skills de .claude/skills.
 # Uso: clic derecho -> "Ejecutar con PowerShell" (o en PowerShell: .\instalar-pc.ps1)
 $ErrorActionPreference = 'Continue'
 Set-Location $PSScriptRoot
@@ -68,6 +68,17 @@ if (Get-Command python -ErrorAction SilentlyContinue) {
 if (Get-Command npm -ErrorAction SilentlyContinue) {
     Write-Host "`n==> Paquetes de Node para las skills" -ForegroundColor Cyan
     npm install -g docx pptxgenjs
+
+    # --- REA: Reverse Engineer Anything (github.com/morluto/rea) ---
+    # La skill ya esta en .claude/skills/reverse-engineer-anything; aqui se instala
+    # el programa "rea" y se registra su servidor MCP en Claude Code.
+    Write-Host "`n==> REA (Reverse Engineer Anything)" -ForegroundColor Cyan
+    npm install --global rea-agents
+    Refresh-Path
+    if (Get-Command rea -ErrorAction SilentlyContinue) {
+        rea setup --client claude_code --skill=false --yes
+        rea doctor --client claude_code
+    }
 }
 
 Write-Host "`nListo. Para abrir la app: doble clic en iniciar-windows.bat" -ForegroundColor Green

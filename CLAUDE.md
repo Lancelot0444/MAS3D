@@ -25,5 +25,8 @@ pedidos, cotizaciones y contabilidad. Responde siempre en **español**.
 
 ## Skills instaladas (`.claude/skills/`, de github.com/anthropics/skills, Apache-2.0)
 `pdf`, `xlsx`, `docx`, `pptx` (cotizaciones, reportes, catálogos), `frontend-design`,
-`webapp-testing` (probar la app con Playwright), `canvas-design`, `theme-factory`, `skill-creator`.
+`webapp-testing` (probar la app con Playwright), `canvas-design`, `theme-factory`, `skill-creator`,
+`reverse-engineer-anything` (REA, github.com/morluto/rea, MIT: ingeniería inversa de apps, binarios, webs y firmware;
+necesita el servidor MCP `rea` → `npm i -g rea-agents && rea setup --client claude_code --skill=false --yes`).
+No uses REA para analizar el código de este repo: aquí ya tienes el código fuente.
 Dependencias: `.claude/requirements-skills.txt` (Windows: `instalar-pc.ps1` las instala todas).
