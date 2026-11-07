@@ -75,6 +75,35 @@ Para cambiar los avisos, edita `POPUP_REMINDERS` y `EMAIL_REMINDERS` en `Code.gs
 
 ---
 
+## Usar la app en tu PC (sin hosting)
+
+Sirve para probar o para trabajar sin internet. Usa SQLite: toda la información queda en `data/mas3d.sqlite`
+(cópialo para hacer un respaldo). Es una base **separada** de la de Hostinger.
+
+**Windows 10/11**
+
+1. Descarga el repositorio (**Code → Download ZIP**) y descomprímelo, por ejemplo en `Documentos\MAS3D`.
+2. Clic derecho en **`instalar-pc.ps1` → Ejecutar con PowerShell** (solo la primera vez). Instala PHP, Git, Python,
+   Node.js, LibreOffice, Pandoc, Claude Code y lo que necesitan las skills. Si Windows lo bloquea, abre PowerShell y escribe
+   `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`, y vuelve a intentar.
+3. Doble clic en **`iniciar-windows.bat`**. Se abre el navegador en `http://localhost:8000`.
+   La primera vez aparece la instalación para crear los usuarios de Brian y Mayra.
+4. No cierres la ventana negra mientras uses la app.
+
+**Mac / Linux:** instala PHP (`brew install php`) y ejecuta `./iniciar.sh`.
+
+## Claude Code y skills
+
+En la carpeta `.claude/skills/` están las skills oficiales de Anthropic (PDF, Excel, Word, PowerPoint, diseño,
+pruebas). Abre PowerShell en la carpeta del proyecto y escribe `claude`: las skills y la guía `CLAUDE.md`
+se cargan solas. Detalle en `.claude/skills/README.md`.
+
+También está **REA (Reverse Engineer Anything)**, de github.com/morluto/rea. Sirve para que Claude estudie cómo funciona
+por dentro un programa, una app o una web (por ejemplo un slicer o la tienda de un competidor) y te explique
+lo que encontró. `instalar-pc.ps1` lo instala y lo conecta a Claude Code; para revisarlo usa `rea doctor`.
+
+---
+
 ## Cómo se usa
 
 | Sección | Para qué sirve |

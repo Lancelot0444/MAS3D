@@ -1,0 +1,13 @@
+# Paquetes de Python que usan las skills (pdf, xlsx, docx, pptx, webapp-testing)
+openpyxl
+pandas
+pypdf
+pdfplumber
+reportlab
+python-docx
+python-pptx
+markitdown[all]
+defusedxml
+lxml
+pillow
+playwright

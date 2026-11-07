@@ -9,9 +9,9 @@ RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Bloquear archivos internos
-RewriteRule ^(app|apps-script|data)(/|$) - [F,L]
+RewriteRule ^(app|apps-script|data|\.claude)(/|$) - [F,L]
 RewriteRule (^|/)\.git - [F,L]
-<FilesMatch "^(config\.php|config\.sample\.php|.*\.md|.*\.sqlite|.*\.sql|\.gitignore)$">
+<FilesMatch "^(config\.php|config\.sample\.php|config\.local\.sample\.php|router\.php|.*\.md|.*\.sqlite|.*\.sql|.*\.bat|.*\.sh|.*\.ps1|\.gitignore)$">
   Require all denied
 </FilesMatch>
 
